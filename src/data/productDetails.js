@@ -10,8 +10,8 @@ export const PRODUCT_DETAILS = {
     bannerImg: '/ozaya_table_banner.png',
     images: [
       '/ozaya_mesh_hero.png',
-      '/ozaya_arms.png',
-      '/ozaya_lumbar.png'
+      '/feather_side.jpg',
+      '/feather_back.jpg'
     ],
     specs: {
       backrest: 'Pebble-shaped lumbar support mirroring the gentle curves of nature',
@@ -28,8 +28,8 @@ export const PRODUCT_DETAILS = {
     ],
     gallery: [
       '/ozaya_mesh_hero.png',
-      '/ozaya_arms.png',
-      '/ozaya_lumbar.png'
+      '/feather_side.jpg',
+      '/feather_back.jpg'
     ],
     colors: [
       { name: 'Charcoal Black', hex: '#1C1C1C', filter: 'none' }

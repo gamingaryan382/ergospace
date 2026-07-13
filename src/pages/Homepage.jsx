@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PRODUCTS, WORKSPACE_SETUPS, B2B_CLIENTS, VISUAL_REVIEWS, PORTFOLIO_PROJECTS } from '../data/products';
-import CollectionPage from './CollectionPage';
+
 import { 
   ArrowRight, Play, Eye, ArrowLeft, Heart, Check, HelpCircle, 
   MapPin, ShieldCheck, Award, MessageSquareCode, Calendar, Clock, Sparkles, Star
@@ -47,7 +47,7 @@ const LATEST_ARTICLES = [
 
 export default function Homepage({ setCurrentPage, setSelectedProductId, setActiveCaseStudyId, setSelectedCategory }) {
   
-  const [localCategory, setLocalCategory] = useState('All');
+
   
   // Posture calibration state removed.
 
@@ -418,15 +418,7 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
         </div>
       </section>
 
-      {/* INTEGRATED PREMIUM SHOWROOMS */}
-      <section style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', padding: '6rem 0 3rem 0' }}>
-        <CollectionPage 
-          setCurrentPage={setCurrentPage} 
-          setSelectedProductId={setSelectedProductId} 
-          selectedCategory={localCategory} 
-          setSelectedCategory={setLocalCategory}
-        />
-      </section>
+
 
       {/* Posture lab section completely removed */}
 
@@ -601,7 +593,7 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
                 clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
               }}>
                 <img 
-                  src="/before_setup.png" 
+                  src="/before_setup.jpg" 
                   alt="Cluttered low-quality office setup with uncomfortable table and chair" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                 />

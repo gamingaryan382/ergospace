@@ -6,7 +6,7 @@ import CollectionPage from './pages/CollectionPage';
 import ProductPage from './pages/ProductPage';
 import SpacesPage from './pages/SpacesPage';
 import ExperienceCentrePage from './pages/ExperienceCentrePage';
-import AIWorkspacePlanner from './features/AIWorkspacePlanner';
+
 import AboutUs from './pages/AboutUs';
 import Latest from './pages/Latest';
 import ProjectsPage from './pages/ProjectsPage';
@@ -21,7 +21,7 @@ import { Check, X, ArrowLeft } from 'lucide-react';
 import { B2B_CLIENTS } from './data/products';
 
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'collection' | 'product' | 'builder' | 'solutions' | 'planner'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'collection' | 'product' | 'builder' | 'solutions'
   const [selectedProductId, setSelectedProductId] = useState('astra-chair');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -114,8 +114,7 @@ function AppContent() {
       case 'solutions':
       case 'experience':
         return <ExperienceCentrePage />;
-      case 'planner':
-        return <AIWorkspacePlanner />;
+
       case 'about':
         return <AboutUs setCurrentPage={setCurrentPage} />;
       case 'projects':

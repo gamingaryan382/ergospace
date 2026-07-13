@@ -113,7 +113,6 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
     { label: 'Spaces', page: 'spaces' },
     { label: 'Experience Centre', page: 'experience' },
     { label: 'Projects', page: 'projects' },
-    { label: 'AI Planner', page: 'planner' },
     { label: 'About Us', page: 'about' },
     { label: 'Latest', page: 'latest' }
   ];

@@ -282,7 +282,6 @@ export default function Footer({ setCurrentPage, setSelectedCategory }) {
                 <li><button onClick={() => { setCurrentPage('spaces'); }} style={{ background: 'none', cursor: 'pointer', color: 'inherit', textAlign: 'left', border: 'none', padding: 0 }}>Industries Served</button></li>
                 <li><button onClick={() => { setCurrentPage('experience'); }} style={{ background: 'none', cursor: 'pointer', color: 'inherit', textAlign: 'left', border: 'none', padding: 0 }}>Noida Experience Centre</button></li>
                 <li><button onClick={() => { setCurrentPage('experience'); }} style={{ background: 'none', cursor: 'pointer', color: 'inherit', textAlign: 'left', border: 'none', padding: 0 }}>Gurugram Factory Hub</button></li>
-                <li><button onClick={() => { setCurrentPage('planner'); }} style={{ background: 'none', cursor: 'pointer', color: 'inherit', textAlign: 'left', border: 'none', padding: 0 }}>AI Space Planner</button></li>
               </ul>
             </div>
 
