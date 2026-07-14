@@ -43,29 +43,18 @@ const megaMenuData = [
     featured: {
       title: 'Storage Solutions',
       description: 'Sleek storage cabinets and organizational lockers designed to tidy modern workspaces.',
-      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80'
-    }
-  },
-  {
-    title: 'Spaces',
-    key: 'spaces',
-    categoryKey: 'Collaboration Spaces',
-    items: ['Corporate Offices', 'Education', 'Hospitals', 'Hotels', 'Co-working', 'Government'],
-    featured: {
-      title: 'Spaces We Serve',
-      description: 'Custom workspaces and collaboration interiors designed to serve enterprise environments.',
-      image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80'
+      image: '/storage_details_hero.png'
     }
   },
   {
     title: 'Accessories',
     key: 'accessories',
     categoryKey: 'Storage & Accessories',
-    items: ['Monitor Arms', 'Keyboard Trays', 'Power Modules', 'Partitions', 'Desk Accessories', 'Cable Management'],
+    items: ['Monitor Arm', 'Whiteboard & Collaboration'],
     featured: {
       title: 'Workspace Accessories',
-      description: 'Dynamic monitor arms, desk organizers, and cable management tools.',
-      image: '/accessories_all.png'
+      description: 'Dynamic monitor arms, desk organizers, and collaborative tools.',
+      image: '/monitor_arm_hero.png'
     }
   }
 ];
@@ -75,8 +64,7 @@ const categoryPanels = {
   workstations: megaMenuData[1].featured,
   tables: megaMenuData[2].featured,
   storage: megaMenuData[3].featured,
-  spaces: megaMenuData[4].featured,
-  accessories: megaMenuData[5].featured
+  accessories: megaMenuData[4].featured
 };
 
 export default function Navbar({ currentPage, setCurrentPage, setSelectedCategory }) {
@@ -134,7 +122,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
     
     if (itemName) {
       setTimeout(() => {
-        const id = `subcategory-${itemName.toLowerCase().replace(' ', '-')}`;
+        const id = `subcategory-${itemName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -265,7 +253,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
               padding: '3rem 4rem',
               zIndex: 999,
               display: 'grid',
-              gridTemplateColumns: 'repeat(6, 1fr)',
+              gridTemplateColumns: 'repeat(5, 1fr)',
               gap: '2.5rem',
               boxSizing: 'border-box',
               animation: 'megaSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1)'

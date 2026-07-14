@@ -207,9 +207,14 @@ const COLLABORATION_SPACES = [
 // 5. STORAGE & ACCESSORIES DATA
 // ==========================================
 const STORAGE_ACCESSORIES = [
-  { id: 'vault-credenza', name: 'Vault Velvet Storage Credenza', desc: 'Premium velvet lined cabinet with internal leather organizing trays.', image: '/vault_chair.png' },
-  { id: 'divider-screen', name: 'Acoustic PET Divider Screen', desc: 'Noise-dampening PET dividers that slot onto office desks.', image: '/wfh_chairs.png' },
-  { id: 'desk-pad', name: 'Merino Wool Desk Pad', desc: 'Warm, non-slip desk pad designed to enhance mouse tracking and typing comfort.', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80' }
+  { id: 'pedestals', name: 'Mobile Cushion Pedestal', desc: 'Versatile under-desk storage drawers with comfortable cushion seating tops.', image: '/pedestal_details_hero.png' },
+  { id: 'storage-cabinets', name: 'Modular Office Storage Cabinet', desc: 'Sleek glass-fronted and locker cabinets designed for organizing office workspaces.', image: '/storage_details_hero.png' },
+  { id: 'lockers', name: 'Fortress Secure Metal Locker', desc: 'Heavy-duty steel lockers with modern keyless latch entries.', image: '/lockers_details_hero.png' },
+  { id: 'credenzas', name: 'Metro Office Storage Credenza', desc: 'Modern low-profile credenzas and lateral filing systems for open offices.', image: '/credenzas_details_hero.png' },
+  { id: 'file-storage', name: 'Omni Filing Storage Wardrobe', desc: 'High-density vertical storage wardrobes designed for corporate filing rooms.', image: '/filing_details_hero.png' },
+  { id: 'shelving-systems', name: 'Matrix Modular Shelving Lockers', desc: 'Versatile multi-tier modular lockers and shelving grids for active teams.', image: '/shelving_details_hero.png' },
+  { id: 'monitor-arm', name: 'Dynamic Gas-Spring Monitor Arm', desc: 'Premium counterbalanced single monitor arm holding screens from 17" to 34".', image: '/monitor_arm_hero.png' },
+  { id: 'whiteboard-collaboration', name: 'Mobile Whiteboard & Collaborative Tools', desc: 'Agile team collaboration package featuring mobile whiteboards, TV stands, and stools.', image: '/whiteboard_hero.png' }
 ];
 
 // ==========================================
@@ -307,7 +312,6 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
     'Ergonomic Chairs',
     'Workstations',
     'Executive Collection',
-    'Collaboration Spaces',
     'Storage & Accessories',
     'Height Adjustable Desks'
   ];
@@ -526,7 +530,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'linear-series',
         name: 'Linear Series Workstation',
         tagline: 'Modular straight-line benching optimized for collaborative engineering groups.',
-        image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
+        image: '/linear_details_hero.png',
         desc: 'The Linear Series Workstation coordinates space efficiency and productivity. Designed to fit team groups, its straight line design keeps computers and documents organized while keeping communication channels open.',
         features: [
           { title: 'Modular Architecture', desc: 'Add, shift, or extend desks as teams grow without changing overall spacing.' },
@@ -538,7 +542,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'manager-cabin',
         name: 'Manager Cabin Desking',
         tagline: 'Private executive workstations detailed with returns and drawer pedestals.',
-        image: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80',
+        image: '/manager_details_hero.png',
         desc: 'The Manager Cabin Desking combines utility and executive styling. Its L-shaped table return delivers expansive surface areas for files, laptops, and client briefings.',
         features: [
           { title: 'Executive Inlay', desc: 'Plush writing zones wrapped in premium materials.' },
@@ -550,7 +554,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'open-office',
         name: 'Open Office Hub Systems',
         tagline: '120-degree radial workstations designed for collaborative creative teams.',
-        image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80',
+        image: '/open_details_hero.png',
         desc: 'Open Office Hub Systems organize linear team desks into dynamic clusters. Orienting workspaces at 120-degree radial angles gives users larger desk surfaces while simplifying collaboration.',
         features: [
           { title: '120-Degree Clustering', desc: 'Provides generous desk surfaces and clear sightlines between colleagues.' },
@@ -562,7 +566,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'height-adjustable',
         name: 'Height Adjustable Series Desking',
         tagline: 'Dual motor sit-stand benching designed to promote active workspaces.',
-        image: '/after_setup.png',
+        image: '/height_details_hero.png',
         desc: 'Height Adjustable Series Desking delivers active ergonomics to corporate teams. Silent motorized columns rise from 65cm to 125cm in seconds, prompting sit-stand shifts.',
         features: [
           { title: 'Dual Motor Telescopic legs', desc: 'Silent motorized lifts travel from sit to stand smoothly in seconds.' },
@@ -574,7 +578,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'collaborative-workstations',
         name: 'Collaborative Media Pods',
         tagline: 'Curved acoustic office pods configured for screen sharing and syncs.',
-        image: '/coworking_space.png',
+        image: '/collab_details_hero.png',
         desc: 'Collaborative Media Pods give teams quick focus points inside open layout corporate offices. Sound-shielding walls filter noise to make meeting syncs productive.',
         features: [
           { title: 'PET Acoustical felt shielding', desc: 'High privacy walls damp external echo and local typing noise.' },
@@ -586,7 +590,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'executive-workstations',
         name: 'Executive Cabin Suite',
         tagline: 'Commanding solid wood desking collections configured for leadership offices.',
-        image: '/apex_desk.png',
+        image: '/cubicle_details_gallery.png',
         desc: 'Executive Cabin Suites represent a premium leadership office experience. Hand-finished teak tops coordinate with brushed structural junctions to deliver a high-prestige executive desking layout.',
         features: [
           { title: 'Solid Wood veneers', desc: 'Teak and ebony finishes showcase executive craftsmanship.' },
@@ -717,7 +721,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'executive-tables',
         name: 'Summit Walnut Executive Table',
         tagline: 'Premium leadership desk detailed in American Walnut and brushed steel.',
-        image: '/summit_table.png',
+        image: '/executive_tables_hero.png',
         desc: 'The Summit Walnut Executive Table represents board-level workspace craftsmanship. Blending heavy-grain veneers with geometric steel understructures, it commands focus and styling prestige.',
         features: [
           { title: 'American Walnut Veneer', desc: 'Hand-selected heavy-grain panels coordinate with drawer storage.' },
@@ -729,7 +733,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'meeting-tables',
         name: 'Media-Sync Meeting Table',
         tagline: 'A modular, media-ready table designed for agile project sync rooms.',
-        image: 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=800&q=80',
+        image: '/meeting_tables_hero.png',
         desc: 'The Media-Sync Meeting Table brings collaboration to project teams. The center channel keeps screens, tablets, and notes connected to power and display links cleanly.',
         features: [
           { title: 'Media Integration Hub', desc: 'Provides quick-access HDMI and Ethernet modules in desk center.' },
@@ -741,7 +745,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'conference-tables',
         name: 'Forum Boardroom Conference Table',
         tagline: 'Large modular conference arrays built for boardroom presentations.',
-        image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80',
+        image: '/conference_tables_hero.png',
         desc: 'The Forum Conference Table coordinates corporate spaces. Its modular design allows panels to link together, matching the sizes of large conference rooms.',
         features: [
           { title: 'Modular Slab Links', desc: 'Desking segments link up cleanly to support larger group capacities.' },
@@ -753,7 +757,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'training-tables',
         name: 'Flexi-Flip Training Table',
         tagline: 'Mobile, flip-top training desks configured for quick seminar setups.',
-        image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
+        image: '/training_tables_hero.png',
         desc: 'The Flexi-Flip Training Table delivers agility to learning environments. A single lever release tilts desktops vertically, allowing tables to nest together to save floor space when idle.',
         features: [
           { title: 'Vertical nesting release', desc: 'Desk flips up easily to slot side-by-side inside storage locks.' },
@@ -765,7 +769,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'cafeteria-tables',
         name: 'Cafe Social Dining Table',
         tagline: 'Scratch-resistant dining tables built for corporate lounges and bistros.',
-        image: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80',
+        image: '/cafeteria_tables_hero.png',
         desc: 'The Cafe Social Dining Table adds clean dining surfaces to office lounges and cafeterias. High-pressure laminate tops prevent staining and clean up quickly after lunch periods.',
         features: [
           { title: 'High-Pressure laminate', desc: 'Resists liquid spills, grease heat marks, and cleaning scrubs.' },
@@ -777,7 +781,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         id: 'height-adjustable-tables',
         name: 'Apex Motorized Conference Table',
         tagline: 'Motorized sit-stand meeting tables configured for active presentation rooms.',
-        image: '/after_setup.png',
+        image: '/height_tables_hero.png',
         desc: 'The Apex Motorized Conference Table introduces sit-stand active loops to corporate meetings. Driven by synchronized quad motors, it raises large tables to standing height smoothly in seconds.',
         features: [
           { title: 'Quad-Motor Sync control', desc: 'Continuous lifts rise smoothly under balanced weights.' },
@@ -901,70 +905,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
   // -------------------------------------------------------------
   // SHOWROOM 4: COLLABORATION SPACES
   // -------------------------------------------------------------
-  const renderCollaborationShowroom = () => {
-    return (
-      <div key="collaboration-showroom" style={{ marginBottom: '8rem' }}>
-        <div style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '1.5rem', marginBottom: '3.5rem' }}>
-          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '0.25rem' }}>Showroom 04</span>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.25rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-            Collaboration Spaces
-          </h2>
-        </div>
 
-        <div className="collab-magazine-moodboard">
-          <div className="collab-magazine-grid">
-            
-            {/* 1. Meeting Pods (Large) */}
-            <div 
-              className="collab-magazine-item item-large"
-              onClick={() => {
-                window.history.pushState({ page: 'product', prodId: 'acoustic-meeting-pods' }, '', `/collection/collaboration/acoustic-meeting-pods`);
-                setSelectedProductId('acoustic-meeting-pods');
-                setCurrentPage('product');
-              }}
-              style={{ cursor: 'pointer' }}
-            >
-              <img src={COLLABORATION_SPACES[0].image} alt={COLLABORATION_SPACES[0].title} className="collab-item-img" />
-              <div className="collab-item-label">{COLLABORATION_SPACES[0].title} (Explore details →)</div>
-            </div>
-
-            {/* 2. Collaborative Tables (Medium) */}
-            <div className="collab-magazine-item item-medium">
-              <img src={COLLABORATION_SPACES[1].image} alt={COLLABORATION_SPACES[1].title} className="collab-item-img" />
-              <div className="collab-item-label">{COLLABORATION_SPACES[1].title}</div>
-            </div>
-
-            {/* 3. Lounge Seating (Small Left) */}
-            <div className="collab-magazine-item item-small-left">
-              <img src={COLLABORATION_SPACES[2].image} alt={COLLABORATION_SPACES[2].title} className="collab-item-img" />
-              <div className="collab-item-label">{COLLABORATION_SPACES[2].title}</div>
-            </div>
-
-            {/* 4. Training Rooms (Small Right) */}
-            <div className="collab-magazine-item item-small-right">
-              <img src={COLLABORATION_SPACES[3].image} alt={COLLABORATION_SPACES[3].title} className="collab-item-img" />
-              <div className="collab-item-label">{COLLABORATION_SPACES[3].title}</div>
-            </div>
-
-            {/* Call to action at bottom */}
-            <div className="collab-cta-box">
-              <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', maxWidth: '550px', margin: '0 auto 2rem auto', fontWeight: 300, lineHeight: 1.6 }}>
-                Create modular collaboration spaces. Our planning consultants sketch custom pods, training rooms, and breakout lounges to fit your office floor plan.
-              </p>
-              <button
-                onClick={(e) => triggerEnquiry('Collaboration Spaces Suite', e)}
-                className="btn-primary"
-                style={{ padding: '1.1rem 3rem' }}
-              >
-                <span>Explore Solutions</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   // -------------------------------------------------------------
   // SHOWROOM 5: STORAGE & ACCESSORIES
@@ -989,6 +930,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
             return (
               <div
                 key={item.id}
+                id={`subcategory-${item.id}`}
                 style={{
                   backgroundColor: 'var(--bg-tertiary)',
                   borderRadius: '12px',
@@ -1135,8 +1077,6 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         return renderWorkstationsShowroom();
       case 'Executive Collection':
         return renderExecutiveShowroom();
-      case 'Collaboration Spaces':
-        return renderCollaborationShowroom();
       case 'Storage & Accessories':
         return renderStorageShowroom();
       case 'Height Adjustable Desks':

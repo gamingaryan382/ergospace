@@ -61,7 +61,7 @@ export const PRODUCT_DETAILS = {
     ],
     gallery: [
       'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1497215842964-222b430db094?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
       { name: 'Obsidian Black', hex: '#1C1C1C', filter: 'none' },
@@ -73,7 +73,7 @@ export const PRODUCT_DETAILS = {
     type: 'chair',
     name: 'Glanza Executive Task Chair',
     tagline: 'Double-arched support frame built for total thoracic alignment.',
-    bannerImg: 'https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=1200&q=80',
+    bannerImg: '/glanza_details_hero.png',
     images: [
       '/glanza_front.jpg',
       '/glanza_side.jpg',
@@ -94,7 +94,8 @@ export const PRODUCT_DETAILS = {
       "The premium waterfall seat design features a slidable frame, distributing thigh load and preventing pressure build-up behind the knees for improved circulation."
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=800&q=80'
+      '/glanza_details_hero.png',
+      '/glanza_details_gallery.png'
     ],
     colors: [
       { name: 'Graphite Black', hex: '#222222', filter: 'none' }
@@ -105,8 +106,9 @@ export const PRODUCT_DETAILS = {
     type: 'chair',
     name: 'Hilite Advanced Task Chair',
     tagline: 'Distinct hook-frame headrest and spring-loaded lumbar tracking.',
-    bannerImg: 'https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=1200&q=80',
+    bannerImg: '/hilite_details_hero.png',
     images: [
+      '/hilite_details_hero.png',
       '/hilite_front.png',
       '/hilite_side.png',
       '/hilite_back.png'
@@ -126,6 +128,7 @@ export const PRODUCT_DETAILS = {
       "Equipped with polyurethane casters, the chair rolls silently and smoothly across hard floors and carpets alike, preventing floor scratching."
     ],
     gallery: [
+      '/hilite_details_hero.png',
       'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
@@ -167,8 +170,9 @@ export const PRODUCT_DETAILS = {
     type: 'chair',
     name: 'Zoom Active Focus Chair',
     tagline: 'Crescent headrest and T-shaped alignment controls for creative tasks.',
-    bannerImg: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
+    bannerImg: '/zoom_details_hero.png',
     images: [
+      '/zoom_details_hero.png',
       '/zoom_front.jpg',
       '/zoom_side.jpg'
     ],
@@ -187,6 +191,7 @@ export const PRODUCT_DETAILS = {
       "The front seat profile features a waterfall molded foam pad, eliminating blood restriction behind the thighs during long-duration design sprints."
     ],
     gallery: [
+      '/zoom_details_hero.png',
       'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
@@ -232,9 +237,10 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Linear Series Workstation',
     tagline: 'Modular straight-line benching optimized for collaborative engineering groups.',
-    bannerImg: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
+    bannerImg: '/linear_details_hero.png',
     images: [
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80'
+      '/linear_details_hero.png',
+      '/linear_details_gallery.png'
     ],
     specs: {
       backrest: 'Shared fabric partition panels (360mm height) for privacy tracking',
@@ -260,8 +266,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Obsidian Black Lacquer', hex: '#262626' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80'
+      '/linear_details_hero.png',
+      '/linear_details_gallery.png'
     ]
   },
   'manager-cabin': {
@@ -269,9 +275,10 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Manager Cabin Desking',
     tagline: 'Private executive workstations detailed with returns and drawer pedestals.',
-    bannerImg: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=1200&q=80',
+    bannerImg: '/manager_details_hero.png',
     images: [
-      'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80'
+      '/manager_details_hero.png',
+      '/manager_details_gallery.png'
     ],
     specs: {
       backrest: 'Side return panel structure providing L-shaped workspace layout',
@@ -296,7 +303,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Arctic Oak', hex: '#E5E7EB' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80'
+      '/manager_details_hero.png',
+      '/manager_details_gallery.png'
     ]
   },
   'open-office': {
@@ -304,9 +312,10 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Open Office Hub Systems',
     tagline: '120-degree radial workstations designed for collaborative creative teams.',
-    bannerImg: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+    bannerImg: '/open_details_hero.png',
     images: [
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80'
+      '/open_details_hero.png',
+      '/open_details_gallery.png'
     ],
     specs: {
       backrest: 'Frosted acrylic division screens filtering light between users',
@@ -331,7 +340,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Warm Cherry Wood', hex: '#B91C1C' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80'
+      '/open_details_hero.png',
+      '/open_details_gallery.png'
     ]
   },
   'height-adjustable': {
@@ -339,9 +349,10 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Height Adjustable Series Desking',
     tagline: 'Dual motor sit-stand benching designed to promote active workspaces.',
-    bannerImg: '/after_setup.png',
+    bannerImg: '/height_details_hero.png',
     images: [
-      '/after_setup.png'
+      '/height_details_hero.png',
+      '/height_details_gallery.png'
     ],
     specs: {
       backrest: 'Sound absorption acoustic privacy screens that travel with height shifts',
@@ -366,7 +377,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Matte Charcoal Black', hex: '#1C1C1C' }
     ],
     gallery: [
-      '/after_setup.png'
+      '/height_details_hero.png',
+      '/height_details_gallery.png'
     ]
   },
   'collaborative-workstations': {
@@ -374,9 +386,10 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Collaborative Media Pods',
     tagline: 'Curved acoustic office pods configured for screen sharing and syncs.',
-    bannerImg: '/coworking_space.png',
+    bannerImg: '/collab_details_hero.png',
     images: [
-      '/coworking_space.png'
+      '/collab_details_hero.png',
+      '/collab_details_gallery.png'
     ],
     specs: {
       backrest: 'High privacy walls (145cm) finished in noise-dampening felt screens',
@@ -401,7 +414,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Slate Blue Felt', hex: '#1E3A8A' }
     ],
     gallery: [
-      '/coworking_space.png'
+      '/collab_details_hero.png',
+      '/collab_details_gallery.png'
     ]
   },
   'executive-workstations': {
@@ -409,9 +423,10 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Executive Cabin Suite',
     tagline: 'Commanding solid wood desking collections configured for leadership offices.',
-    bannerImg: '/apex_desk.png',
+    bannerImg: '/cubicle_details_gallery.png',
     images: [
-      '/apex_desk.png'
+      '/cubicle_details_gallery.png',
+      '/cubicle_details_hero.png'
     ],
     specs: {
       backrest: 'Thick modesty panel shroud finished in teakwood grain veneer',
@@ -436,7 +451,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Ebony Wood Veneer', hex: '#111827' }
     ],
     gallery: [
-      '/apex_desk.png'
+      '/cubicle_details_gallery.png',
+      '/cubicle_details_hero.png'
     ]
   },
 
@@ -650,8 +666,11 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Summit Walnut Executive Table',
     tagline: 'Premium leadership desk detailed in American Walnut and brushed steel.',
-    bannerImg: '/summit_table.png',
-    images: ['/summit_table.png'],
+    bannerImg: '/executive_tables_hero.png',
+    images: [
+      '/executive_tables_hero.png',
+      '/summit_table.png'
+    ],
     specs: {
       backrest: 'Solid hardwood core with integrated wood grain patterns matching returns',
       armrest: 'Bevelled safety profile edges and hand-stitched leather work zones',
@@ -675,6 +694,7 @@ export const PRODUCT_DETAILS = {
       { name: 'Ebony Oak', hex: '#1C1C1C' }
     ],
     gallery: [
+      '/executive_tables_hero.png',
       '/summit_table.png'
     ]
   },
@@ -683,8 +703,11 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Media-Sync Meeting Table',
     tagline: 'A modular, media-ready table designed for agile project sync rooms.',
-    bannerImg: 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=1200&q=80',
-    images: ['https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=800&q=80'],
+    bannerImg: '/meeting_tables_hero.png',
+    images: [
+      '/meeting_tables_hero.png',
+      '/meeting_tables_gallery.png'
+    ],
     specs: {
       backrest: 'Acoustic felt privacy end-panels for team division options',
       armrest: 'Seamless waterfall front edging to improve typing comfort',
@@ -708,7 +731,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Slate Matte Grey', hex: '#4B5563' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=800&q=80'
+      '/meeting_tables_hero.png',
+      '/meeting_tables_gallery.png'
     ]
   },
   'conference-tables': {
@@ -716,8 +740,11 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Forum Boardroom Conference Table',
     tagline: 'Large modular conference arrays built for boardroom presentations.',
-    bannerImg: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
-    images: ['https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80'],
+    bannerImg: '/conference_tables_hero.png',
+    images: [
+      '/conference_tables_hero.png',
+      '/conference_tables_gallery.png'
+    ],
     specs: {
       backrest: 'Integrated horizontal modesty panel shields under the table top',
       armrest: 'Quilted leatherite safety edge guards for arm comfort',
@@ -741,7 +768,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Executive Walnut', hex: '#4A2711' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80'
+      '/conference_tables_hero.png',
+      '/conference_tables_gallery.png'
     ]
   },
   'training-tables': {
@@ -749,8 +777,11 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Flexi-Flip Training Table',
     tagline: 'Mobile, flip-top training desks configured for quick seminar setups.',
-    bannerImg: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
-    images: ['https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80'],
+    bannerImg: '/training_tables_hero.png',
+    images: [
+      '/training_tables_hero.png',
+      '/training_tables_gallery.png'
+    ],
     specs: {
       backrest: 'Modesty mesh panel options hanging beneath the table top',
       armrest: 'Impact-resistant bumper guards wrapped on desk edges',
@@ -774,7 +805,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Light Ashwood', hex: '#EAE6DF' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80'
+      '/training_tables_hero.png',
+      '/training_tables_gallery.png'
     ]
   },
   'cafeteria-tables': {
@@ -782,8 +814,11 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Cafe Social Dining Table',
     tagline: 'Scratch-resistant dining tables built for corporate lounges and bistros.',
-    bannerImg: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=1200&q=80',
-    images: ['https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80'],
+    bannerImg: '/cafeteria_tables_hero.png',
+    images: [
+      '/cafeteria_tables_hero.png',
+      '/cafeteria_tables_gallery.png'
+    ],
     specs: {
       backrest: 'Sleek round or square visual silhouette designs',
       armrest: 'Anti-spill chamfered edges preventing water drops from falling',
@@ -807,7 +842,8 @@ export const PRODUCT_DETAILS = {
       { name: 'Warm Cherrywood', hex: '#9E2A2B' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80'
+      '/cafeteria_tables_hero.png',
+      '/cafeteria_tables_gallery.png'
     ]
   },
   'height-adjustable-tables': {
@@ -815,8 +851,11 @@ export const PRODUCT_DETAILS = {
     type: 'workstation',
     name: 'Apex Motorized Conference Table',
     tagline: 'Motorized sit-stand meeting tables configured for active presentation rooms.',
-    bannerImg: '/after_setup.png',
-    images: ['/after_setup.png'],
+    bannerImg: '/height_tables_hero.png',
+    images: [
+      '/height_tables_hero.png',
+      '/height_tables_gallery.png'
+    ],
     specs: {
       backrest: 'Continuous motorized lift columns (range 68cm to 120cm)',
       armrest: 'Chamfered safety edge guards preventing collisions',
@@ -840,7 +879,300 @@ export const PRODUCT_DETAILS = {
       { name: 'Polar White Matte', hex: '#FFFFFF' }
     ],
     gallery: [
-      '/after_setup.png'
+      '/height_tables_hero.png',
+      '/height_tables_gallery.png'
+    ]
+  },
+  'pedestals': {
+    id: 'pedestals',
+    type: 'workstation',
+    name: 'Mobile Cushion Pedestal',
+    tagline: 'Versatile under-desk storage drawers with comfortable cushion seating tops.',
+    bannerImg: '/pedestal_details_hero.png',
+    images: [
+      '/pedestal_details_hero.png',
+      '/pedestal_details_gallery.png'
+    ],
+    specs: {
+      backrest: 'Fully padded fabric seat cushion providing quick hot-desking visitor seats',
+      armrest: 'Sleek anti-pinch drawer handles with minimalist styling',
+      seat: 'Dual sliding drawers supporting A4 hanging files and office stationery',
+      mechanism: 'Lockable anti-tilt mechanism permitting only one open drawer at a time',
+      material: 'E1 grade melamine face board core with high-density polyfoam cushion',
+      application: 'Open plan offices, modular hot-desks, and shared study benches',
+      legs: 'Heavy-duty smooth polyurethane swivel casters with front brakes'
+    },
+    overview: [
+      "The Mobile Cushion Pedestal integrates personal storage with casual collaboration. It rolls cleanly under standard desks, keeping documents and personal assets organized.",
+      "The top features a thick, padded fabric cushion, instantly converting the pedestal into a temporary visitor seat for quick side-by-side desk discussions.",
+      "Equipped with keyless digital combination locks and anti-tilt counterweights, it guarantees safety and high security in modern open office environments."
+    ],
+    configurations: [
+      { name: '2-Drawer Mobile', desc: 'Compact file drawer pedestal with top cushion.' }
+    ],
+    materials: [
+      { name: 'Warm Oak', hex: '#D2B48C' },
+      { name: 'Arctic White', hex: '#FFFFFF' }
+    ],
+    gallery: [
+      '/pedestal_details_hero.png',
+      '/pedestal_details_gallery.png'
+    ]
+  },
+  'storage-cabinets': {
+    id: 'storage-cabinets',
+    type: 'workstation',
+    name: 'Modular Office Storage Cabinet',
+    tagline: 'Sleek glass-fronted and locker cabinets designed for organizing office workspaces.',
+    bannerImg: '/storage_details_hero.png',
+    images: [
+      '/storage_details_hero.png',
+      '/storage_details_gallery.png'
+    ],
+    specs: {
+      backrest: 'Tempered safety glass door panels or solid wood privacy panel options',
+      armrest: 'Stainless steel handles with key locks for secure storage',
+      seat: 'Multiple height shelves supporting heavy binders and archiving trays',
+      mechanism: 'Soft-close door hinges and magnetic catches for smooth operations',
+      material: 'High-density fiberboard structure with steel shelf brackets',
+      application: 'Corporate filing rooms, library archives, and department suites',
+      legs: 'Sturdy solid base frame with floor levelers for perfect stability'
+    },
+    overview: [
+      "The Modular Office Storage Cabinet coordinates high-capacity filing with clean aesthetics. Offering options for clear-glass doors, it showcases company assets and literature elegantly.",
+      "Adjustable internal shelves support heavy binders, folders, and tech inventory, meeting high organizational standards.",
+      "Crafted with scratch-proof melamine veneer finishes and key-locked handles, it delivers durabilty and security to central corporate environments."
+    ],
+    configurations: [
+      { name: 'Glass-Door Credenza', desc: 'Medium-height cabinet with clear tempered glass doors.' },
+      { name: 'Tall Privacy Locker', desc: 'Full-height wood cabinet with lockable solid panels.' }
+    ],
+    materials: [
+      { name: 'Natural Ashwood', hex: '#EAE6DF' },
+      { name: 'Slate Matte Grey', hex: '#4B5563' }
+    ],
+    gallery: [
+      '/storage_details_hero.png',
+      '/storage_details_gallery.png'
+    ]
+  },
+  'lockers': {
+    id: 'lockers',
+    type: 'workstation',
+    name: 'Fortress Secure Metal Locker',
+    tagline: 'Heavy-duty steel lockers with modern keyless latch entries.',
+    bannerImg: '/lockers_details_hero.png',
+    images: [
+      '/lockers_details_hero.png',
+      '/lockers_details_gallery.png'
+    ],
+    specs: {
+      backrest: 'Full-steel double-reinforced door frames preventing bending',
+      armrest: 'Durable recessed pull handles with manual padlock eyelets',
+      seat: 'Multiple adjustable shelves or individual coat hanger rod options',
+      mechanism: '3-point security latch rods locking top, side, and bottom edges',
+      material: 'Cold-rolled heavy-gauge powder-coated structural steel sheets',
+      application: 'Staff locker rooms, school hallways, gym rooms, and mail hubs',
+      legs: 'Solid integrated plinth base frame with leveling feet bolts'
+    },
+    overview: [
+      "The Fortress Secure Metal Locker delivers steel-strength asset security to workspaces. Its cold-rolled steel sheet body resists impact force and daily rough handling cycles.",
+      "A 3-point locking latch system secures top, middle, and bottom door panels simultaneously, keeping personal electronics, bags, and items safe.",
+      "Featuring high-vent ventilation louvers and rust-resistant electro-powder coatings, it ensures low maintenance inside heavy-traffic utility rooms."
+    ],
+    configurations: [
+      { name: '2-Tier Steel Locker', desc: 'Symmetrical double-compartment metal locker unit.' }
+    ],
+    materials: [
+      { name: 'Orange Matte', hex: '#F97316' },
+      { name: 'Slate Grey', hex: '#4B5563' }
+    ],
+    gallery: [
+      '/lockers_details_hero.png',
+      '/lockers_details_gallery.png'
+    ]
+  },
+  'credenzas': {
+    id: 'credenzas',
+    type: 'workstation',
+    name: 'Metro Office Storage Credenza',
+    tagline: 'Modern low-profile credenzas and lateral filing systems for open offices.',
+    bannerImg: '/credenzas_details_hero.png',
+    images: [
+      '/credenzas_details_hero.png',
+      '/credenzas_details_gallery.png'
+    ],
+    specs: {
+      backrest: 'Clean horizontal profile tops serving as active counter surfaces',
+      armrest: 'Universal lateral document rails holding legal-size hanging folders',
+      seat: 'Wide sliding-door cabinets or heavy-capacity file drawers',
+      mechanism: 'Synchronized slide runners with integrated anti-bounce dampers',
+      material: 'Combination of steel frame elements and E1 grade wood grain panels',
+      application: 'Departments corridors, active work areas, and project suites',
+      legs: 'Flush-profile steel corner brackets with structural floor glides'
+    },
+    overview: [
+      "The Metro Storage Credenza integrates high-capacity document archiving with elegant flat-top workspace utilities. Its low-height structure fits under windows and around columns cleanly.",
+      "The lateral drawers run on heavy-duty ball-bearing slide tracks, gliding smoothly even when filled with heavy file folders.",
+      "Featuring custom modular options like top planter boxes and accent color slide doors, it helps divide department zones while adding warmth and organization."
+    ],
+    configurations: [
+      { name: '4-Drawer Lateral File', desc: 'High-density steel drawer lateral credenza.' },
+      { name: 'Social Credenza Set', desc: 'Credenza cabinet featuring top planter boxes and color door fronts.' }
+    ],
+    materials: [
+      { name: 'Arctic White', hex: '#FFFFFF' },
+      { name: 'Muted Teal', hex: '#0D9488' }
+    ],
+    gallery: [
+      '/credenzas_details_hero.png',
+      '/credenzas_details_gallery.png'
+    ]
+  },
+  'file-storage': {
+    id: 'file-storage',
+    type: 'workstation',
+    name: 'Omni Filing Storage Wardrobe',
+    tagline: 'High-density vertical storage wardrobes designed for corporate filing rooms.',
+    bannerImg: '/filing_details_hero.png',
+    images: [
+      '/filing_details_hero.png',
+      '/filing_details_gallery.png'
+    ],
+    specs: {
+      backrest: 'Full-height wood composite panels finished in soft matte laminate',
+      armrest: 'Flush aluminum door handles with integrated security locks',
+      seat: 'Adjustable shelving layouts matching central document binders',
+      mechanism: 'Smooth soft-close door hinges and high-capacity steel shelf tracks',
+      material: 'E1 grade eco-friendly engineered wood with scratch-resistant melamine sheets',
+      application: 'Filing rooms, central archiving centers, and legal suites',
+      legs: 'Heavy-duty steel base frame with integrated leveling glides'
+    },
+    overview: [
+      "The Omni Filing Storage Wardrobe brings vertical organization to busy corporate workspaces. Its high-capacity shelving system stores hundreds of central document binders, box files, and storage bins cleanly.",
+      "The doors open a full 110 degrees on soft-closing hinges, ensuring easy access while avoiding slams in busy corridors.",
+      "Finished in scratch-resistant premium melamines with lockable doors, it provides departments with reliable and private security."
+    ],
+    configurations: [
+      { name: '4-Door Filing Wardrobe', desc: 'Full-height dual compartment wardrobe with central divider.' }
+    ],
+    materials: [
+      { name: 'Light Teal Oak', hex: '#639A9C' },
+      { name: 'Slate Matte Grey', hex: '#4B5563' }
+    ],
+    gallery: [
+      '/filing_details_hero.png',
+      '/filing_details_gallery.png'
+    ]
+  },
+  'shelving-systems': {
+    id: 'shelving-systems',
+    type: 'workstation',
+    name: 'Matrix Modular Shelving Lockers',
+    tagline: 'Versatile multi-tier modular lockers and shelving grids for active teams.',
+    bannerImg: '/shelving_details_hero.png',
+    images: [
+      '/shelving_details_hero.png',
+      '/shelving_details_gallery.png'
+    ],
+    specs: {
+      backrest: 'Modular steel open-grid structures or solid cabinet panels',
+      armrest: 'Recessed door handles with smart RFID or mechanical combination locks',
+      seat: 'Multiple locker compartments or open display shelving options',
+      mechanism: 'Concealed self-closing door hinges with door damper buffers',
+      material: 'Steel framing panels with high-pressure laminate door faces',
+      application: 'Co-working spaces, active collaborative zones, and hot-desks lobbies',
+      legs: 'Sturdy solid steel frame with leveling glides for perfect alignment'
+    },
+    overview: [
+      "The Matrix Modular Shelving System offers a creative layout divider that combines personal storage with display shelving. Its modular design allows teams to stack shelves and locker cubbies to fit any open room.",
+      "Locker compartments feature smart keyless lock options (RFID card or combo locks), giving hot-desking employees safe personal storage spaces.",
+      "With open display shelves integrated alongside closed lockers, it serves as a beautiful room boundary while keeping items organized."
+    ],
+    configurations: [
+      { name: '8-Compartment Locker Grid', desc: 'Medium-height modular locker tower with grey and white doors.' },
+      { name: '16-Compartment Team Array', desc: 'Tall modular team storage system with teal and grey door panels.' }
+    ],
+    materials: [
+      { name: 'Muted Teal & Grey', hex: '#5FA3A4' },
+      { name: 'Arctic White & Silver', hex: '#E5E7EB' }
+    ],
+    gallery: [
+      '/shelving_details_hero.png',
+      '/shelving_details_gallery.png'
+    ]
+  },
+  'monitor-arm': {
+    id: 'monitor-arm',
+    type: 'workstation',
+    name: 'Dynamic Gas-Spring Monitor Arm',
+    tagline: 'Premium counterbalanced single monitor arm holding screens from 17" to 34".',
+    bannerImg: '/monitor_arm_hero.png',
+    images: [
+      '/monitor_arm_hero.png',
+      '/monitor_arm_gallery.png'
+    ],
+    specs: {
+      backrest: 'Universal 75x75mm or 100x100mm VESA mounting plate brackets',
+      armrest: 'Premium counterbalanced gas spring cylinder adjusting height effortlessly',
+      seat: 'Desk edge C-clamp mounting or structural grommet hole base setups',
+      mechanism: '+90°/-90° tilt, 180° swivel rotation, and 360° screen orientations',
+      material: 'Aircraft-grade polished aluminum alloy housing with integrated cable paths',
+      application: 'Task desks, trading room setups, design studios, and home offices',
+      legs: 'Padded desk contact clamps protecting worktops from scratch marks'
+    },
+    overview: [
+      "The Dynamic Gas-Spring Monitor Arm frees valuable desk space by lifting monitors above work surfaces. Driven by a premium counterbalanced gas-spring column, it lets users adjust screen height, depth, and angle with a single finger touch.",
+      "The mounting joint supports standard landscape or vertical screen rotations, matching programmers, designers, and analyst workflows perfectly.",
+      "An integrated mechanical cable management channel runs down the arm structure, hiding power and display trails completely."
+    ],
+    configurations: [
+      { name: 'Single Desk Clamp Arm', desc: 'Standard single-screen clamp desk mount setup.' }
+    ],
+    materials: [
+      { name: 'Matte Orange Accent', hex: '#F97316' },
+      { name: 'Stealth Black', hex: '#111827' }
+    ],
+    gallery: [
+      '/monitor_arm_hero.png',
+      '/monitor_arm_gallery.png'
+    ]
+  },
+  'whiteboard-collaboration': {
+    id: 'whiteboard-collaboration',
+    type: 'workstation',
+    name: 'Mobile Whiteboard & Collaborative Tools',
+    tagline: 'Agile team collaboration package featuring mobile whiteboards, TV stands, and stools.',
+    bannerImg: '/whiteboard_hero.png',
+    images: [
+      '/whiteboard_hero.png',
+      '/whiteboard_gallery.png'
+    ],
+    specs: {
+      backrest: 'Magnetic double-sided dry erase ceramic glass writing surface',
+      armrest: 'Integrated whiteboard marker pen trays and eraser slots',
+      seat: 'Mobile TV screen mount stand supporting up to 55" display screens',
+      mechanism: 'Quick-release rotation latch flipping the writing board panels vertically',
+      material: 'Powder-coated tubular steel support framing on swivel lock rollers',
+      application: 'Agile project rooms, brainstorming hallways, and education classes',
+      legs: 'Heavy-duty 4-caster wheel stands with dual-locking brake plates'
+    },
+    overview: [
+      "The Mobile Whiteboard & Collaborative Tools package delivers agility to brainstorming sessions and strategic presentation loops. It bundles double-sided ceramic easels, mobile stools, and a TV stand.",
+      "The whiteboard features a magnetic ceramic surface that resists ghosting and stains, cleaning up easily after heavy workshops.",
+      "Mounted on quiet lockable casters, these collaborative elements move wherever teams need them, converting corridors and open zones into temporary sync hubs."
+    ],
+    configurations: [
+      { name: 'Agile Collab Set', desc: 'Bundles 1 mobile easel, 1 mobile standing table, and 2 stools.' },
+      { name: 'Nesting Study Desk Set', desc: 'Includes two mobile nesting folding study tables on rollers.' }
+    ],
+    materials: [
+      { name: 'Arctic White & Grey', hex: '#E5E7EB' },
+      { name: 'Muted Teal Blue', hex: '#0D9488' }
+    ],
+    gallery: [
+      '/whiteboard_hero.png',
+      '/whiteboard_gallery.png'
     ]
   }
 };
