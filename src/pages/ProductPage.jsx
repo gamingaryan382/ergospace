@@ -115,7 +115,7 @@ export default function ProductPage({ productId, setCurrentPage }) {
       {/* HEADER SECTION: Centered large title and group render banner */}
       <section style={{ textAlign: 'center', paddingBottom: '3rem' }}>
         <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontFamily: 'var(--font-display)', fontWeight: 300, margin: '0 0 2rem 0', letterSpacing: '0.02em', color: 'var(--text-primary)' }}>
-          {product.name.split(' ')[0]}
+          {product.name}
         </h1>
         
         {/* Large group banner */}

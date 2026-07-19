@@ -2,6 +2,68 @@ export const PRODUCT_DETAILS = {
   // ==========================================
   // --- ERGONOMIC CHAIRS (type: 'chair') ---
   // ==========================================
+  'enova': {
+    id: 'enova',
+    type: 'chair',
+    name: 'Enova',
+    tagline: 'Mesh high back chair engineered for dynamic posture and lower back comfort.',
+    bannerImg: '/enova_poster.jpg',
+    images: [
+      '/enova_front.png',
+      '/enova_back.png'
+    ],
+    specs: {
+      backrest: 'Height adjustable backrest with Grey mesh headrest & Waist -lift support',
+      armrest: 'Adjustable SD foldable armrests',
+      seat: 'Pneumatic Seat Height Adjustment',
+      mechanism: 'Multi functional wire control mechanism with seat',
+      material: 'Mesh high back chair',
+      application: 'Professional Task Seating / Workspace Environments',
+      legs: 'Nylon base with Nylon castors'
+    },
+    overview: [
+      "The Enova is a benchmark of modern task chair engineering. Combining a breathable high-back mesh structure with customizable grey headrest, it delivers day-long comfort and thermal ventilation.",
+      "Featuring a multi-functional wire control mechanism, adjustable SD foldable armrests, and dynamic waist-lift support, the Enova adapts dynamically to user movements to maintain healthy posture and spinal alignment."
+    ],
+    gallery: [
+      '/enova_front.png',
+      '/enova_back.png'
+    ],
+    colors: [
+      { name: 'Grey Mesh', hex: '#BEBEBE', filter: 'none' }
+    ]
+  },
+  'ergo-human': {
+    id: 'ergo-human',
+    type: 'chair',
+    name: 'Ergo Human',
+    tagline: 'High-performance mesh chair engineered for ultimate orthopedic posture.',
+    bannerImg: '/ergo_human_poster.jpg',
+    images: [
+      '/ergo_human_front.png',
+      '/ergo_human_back.png'
+    ],
+    specs: {
+      backrest: 'Adjustable Back Support',
+      armrest: 'Adjustable headrest & SD Adjustable armrest',
+      seat: 'Pneumatic Seat Height Adjustment',
+      mechanism: 'Self balancing Synchro Mechanism with seat slider & any point Locking',
+      material: 'Mesh Chair',
+      application: 'High-Performance Executive Seating / Ergonomic Workspaces',
+      legs: 'Aluminum Base with Nylon castors'
+    },
+    overview: [
+      "The Ergo Human is a benchmark in high-performance task seating. Featuring an advanced mesh shell structure, it delivers micro-calibrated cooling and active physical posture alignment.",
+      "Equipped with a self-balancing synchro mechanism and adjustable back support, it coordinates seamlessly with your movements to alleviate spinal compression and promote long-cycle concentration."
+    ],
+    gallery: [
+      '/ergo_human_front.png',
+      '/ergo_human_back.png'
+    ],
+    colors: [
+      { name: 'Slate Grey Mesh', hex: '#A8A8A8', filter: 'none' }
+    ]
+  },
   feather: {
     id: 'feather',
     type: 'chair',

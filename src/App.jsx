@@ -6,6 +6,7 @@ import CollectionPage from './pages/CollectionPage';
 import ProductPage from './pages/ProductPage';
 import SpacesPage from './pages/SpacesPage';
 import ExperienceCentrePage from './pages/ExperienceCentrePage';
+import WhereToBuy from './pages/WhereToBuy';
 
 import AboutUs from './pages/AboutUs';
 import Latest from './pages/Latest';
@@ -24,6 +25,7 @@ function AppContent() {
   const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'collection' | 'product' | 'builder' | 'solutions'
   const [selectedProductId, setSelectedProductId] = useState('astra-chair');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedSubcategory, setSelectedSubcategory] = useState('frost-and-slate');
 
   // Scroll to top on page transition (micro-timer ensures reliability across layouts)
   React.useEffect(() => {
@@ -99,6 +101,8 @@ function AppContent() {
             setSelectedProductId={setSelectedProductId} 
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
+            selectedSubcategory={selectedSubcategory}
+            setSelectedSubcategory={setSelectedSubcategory}
           />
         );
       case 'product':
@@ -114,6 +118,9 @@ function AppContent() {
       case 'solutions':
       case 'experience':
         return <ExperienceCentrePage />;
+
+      case 'wheretobuy':
+        return <WhereToBuy setCurrentPage={setCurrentPage} />;
 
       case 'about':
         return <AboutUs setCurrentPage={setCurrentPage} />;
@@ -151,7 +158,12 @@ function AppContent() {
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       
       {/* Global Navigation Header */}
-      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} setSelectedCategory={setSelectedCategory} />
+      <Navbar 
+        currentPage={currentPage} 
+        setCurrentPage={setCurrentPage} 
+        setSelectedCategory={setSelectedCategory} 
+        setSelectedSubcategory={setSelectedSubcategory}
+      />
 
       {/* Main Page Layout Container */}
       <main style={{ flex: '1 0 auto', position: 'relative' }}>

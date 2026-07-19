@@ -1,7 +1,26 @@
-# Tasks
+# ErgoSpace Bug-Fix & Polishing Checklist
 
-- `[x]` Restore Flow task chair outside visual card catalogue to `/flow_front.png`
-- `[x]` Copy correct Ozaya screenshots from brain directory to public project assets
-- `[x]` Set correct Ozaya table layout `/ozaya_table_banner.png` as top banner visual at full height without cropping
-- `[x]` Set correct Ozaya lifestyle hero, fully adjustable arms detail, and signature lumbar support detail as full-size sequential items in the product details page
-- `[x]` Verify production build compiles successfully
+- [x] Swapped Dynamic Posture/Performance Hub page for a business-focused **Workspace Solutions** page
+- [x] Swapped out the Dynamic Posture Calibration sliders section from the Homepage
+- [x] Deactivated unused `PerformanceHub.jsx` file code completely
+- [x] Fixed Astra Ergonomic Chair image
+  - Replaced with a premium dark mesh ergonomic office chair: `https://images.unsplash.com/photo-1688578736932-d81b4526550b?auto=format&fit=crop&w=800&q=80`
+- [x] Fixed Conference Furniture category image
+  - Replaced with a premium boardroom table meeting setup image: `https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80`
+- [x] Fixed Postural Re-calibration Before/After Slider
+  - Before image: Replaced with a highly cluttered, messy desk, wires visible, basic chair before photo: `https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&w=1200&q=80`
+  - After image: Replaced with an organized oak standing desk workspace after photo: `https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80`
+  - Slider dragging behavior: Runs on window-event dragging, butter-smooth
+- [x] Nexon Boardroom Suite Image Fix
+  - Uses premium conference boardroom image: `https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80`
+- [x] Customer Review Section & Speed
+  - Reduced horizontal marquee ticker loop speed to a very slow `120s` (2 minutes) to present a premium showroom feel
+  - Reduced horizontal setups marquee loop speed to `90s`
+- [x] Removed Vertical Moving Review Section
+  - Verified no vertical moving review scrolling feeds are active on the site
+- [x] Audited Review Card Images
+  - All 16 review cards contain verified, high-quality profile avatars and workspace images
+- [x] Audited & Redesigned large Black Section (TrustStats)
+  - Transformed into a light cream B2B Trust, Scale & Certification validation grid
+- [x] Final Quality Check & Compilation Verification
+  - Verified no broken images exist, mobile responsiveness is intact, and Vite build output compiles successfully

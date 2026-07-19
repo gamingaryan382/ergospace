@@ -46,9 +46,63 @@ const LATEST_ARTICLES = [
 ];
 
 export default function Homepage({ setCurrentPage, setSelectedProductId, setActiveCaseStudyId, setSelectedCategory }) {
-  
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      id: 'chairs',
+      name: 'ERGONOMIC CHAIRS',
+      heading: 'Comfort engineered for productivity.',
+      image: '/hero_chairs.png',
+      categoryKey: 'Ergonomic Chairs'
+    },
+    {
+      id: 'workstations',
+      name: 'WORKSTATIONS',
+      heading: 'Flexible modular workstations for modern offices.',
+      image: '/hero_workstations.png',
+      categoryKey: 'Workstations'
+    },
+    {
+      id: 'collaborative',
+      name: 'COLLABORATIVE SPACES',
+      heading: 'Designed to bring teams together.',
+      image: '/hero_collaborative.png',
+      categoryKey: 'Workstations'
+    },
+    {
+      id: 'desks',
+      name: 'HEIGHT ADJUSTABLE DESKS',
+      heading: 'Move naturally throughout the workday.',
+      image: '/hero_height_desks.png',
+      categoryKey: 'Height Adjustable Desks'
+    },
+    {
+      id: 'storage',
+      name: 'STORAGE SOLUTIONS',
+      heading: 'Intelligent storage for organised workplaces.',
+      image: '/hero_storage.png',
+      categoryKey: 'Storage & Accessories'
+    }
+  ];
 
-  
+  // Autoplay timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNextSlide = (e) => {
+    if (e) e.stopPropagation();
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const handlePrevSlide = (e) => {
+    if (e) e.stopPropagation();
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   // Posture calibration state removed.
 
   // Section 6 Before/After Slider State
@@ -140,146 +194,231 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
   return (
     <div style={{ position: 'relative' }}>
       
-      {/* SECTION 1 — HERO GALLERY */}
+      {/* SECTION 1 — PREMIUM SLIDESHOW HERO */}
       <section style={{
         height: '100vh',
         width: '100%',
         position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center', // Sit perfectly in the visual center
         overflow: 'hidden',
-        backgroundColor: 'var(--bg-secondary)'
+        backgroundColor: 'var(--bg-dark)'
       }}>
-        {/* Infinite Scrolling Horizontal Marquee */}
+        {/* Slides Container */}
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          {slides.map((slide, idx) => {
+            const isActive = idx === currentSlide;
+            return (
+              <div
+                key={slide.id}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  opacity: isActive ? 1 : 0,
+                  transform: `translate3d(${(idx - currentSlide) * 100}%, 0, 0)`,
+                  transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease',
+                  zIndex: isActive ? 5 : 1,
+                  pointerEvents: isActive ? 'auto' : 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  boxSizing: 'border-box'
+                }}
+              >
+                {/* Background Image (Full screen, no cut-out) */}
+                <img
+                  src={slide.image}
+                  alt={slide.name}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    zIndex: 1
+                  }}
+                />
+
+                {/* Dark Gradient Overlay for readability */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  background: 'linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%)',
+                  zIndex: 2
+                }} />
+
+                {/* Content Panel */}
+                <div className="container-premium" style={{
+                  position: 'relative',
+                  zIndex: 3,
+                  width: '100%',
+                  padding: '0 8%',
+                  boxSizing: 'border-box',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1.25rem',
+                  alignItems: 'flex-start',
+                  textAlign: 'left'
+                }}>
+                  {/* Small Label */}
+                  <span style={{
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.3em',
+                    textTransform: 'uppercase'
+                  }}>
+                    {slide.name}
+                  </span>
+
+                  {/* Heading */}
+                  <h1 style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: 'clamp(2.25rem, 5vw, 4rem)',
+                    fontWeight: 800,
+                    lineHeight: 1.15,
+                    margin: '0 0 1.5rem 0',
+                    letterSpacing: '-0.02em',
+                    maxWidth: '850px'
+                  }}>
+                    {slide.heading}
+                  </h1>
+
+                  {/* Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (setSelectedCategory) {
+                        setSelectedCategory(slide.categoryKey);
+                      }
+                      setCurrentPage('collection');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="btn-primary"
+                    style={{
+                      padding: '1rem 2.25rem',
+                      fontSize: '0.88rem',
+                      borderRadius: '6px',
+                      border: 'none',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <span>Explore Collection</span>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Slide Navigation Arrows */}
+        <button 
+          onClick={handlePrevSlide}
+          style={{
+            position: 'absolute',
+            left: '2.5rem',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 10,
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.25)',
+            color: '#FFFFFF',
+            width: '54px',
+            height: '54px',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(8px)'
+          }}
+          className="slider-arrow"
+          aria-label="Previous Slide"
+        >
+          <ArrowLeft size={22} />
+        </button>
+        <button 
+          onClick={handleNextSlide}
+          style={{
+            position: 'absolute',
+            right: '2.5rem',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 10,
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.25)',
+            color: '#FFFFFF',
+            width: '54px',
+            height: '54px',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(8px)'
+          }}
+          className="slider-arrow"
+          aria-label="Next Slide"
+        >
+          <ArrowRight size={22} />
+        </button>
+
+        {/* Slide Indicators (Dots) */}
         <div style={{
           position: 'absolute',
-          top: 0,
-          left: 0,
-          width: 'max-content',
-          height: '100%',
+          bottom: '2.5rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 10,
           display: 'flex',
-          zIndex: 1,
-          animation: 'loopMarquee 30s linear infinite',
-          transform: 'translate3d(0, 0, 0)',
-          willChange: 'transform',
-          backfaceVisibility: 'hidden'
+          gap: '0.85rem'
         }}>
-          {scrollGallery.map((imgUrl, idx) => (
-            <div 
-              key={idx} 
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentSlide(idx)}
               style={{
-                width: '400px',
-                height: '100%',
-                flexShrink: 0,
-                padding: '0 0.5rem',
-                opacity: 0.75 // Highly visible workspace imagery
+                width: idx === currentSlide ? '28px' : '8px',
+                height: '8px',
+                borderRadius: '4px',
+                backgroundColor: idx === currentSlide ? 'var(--accent)' : 'rgba(255, 255, 255, 0.4)',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
-            >
-              <img 
-                src={imgUrl} 
-                alt="Workspace preview gallery" 
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover'
-                }} 
-              />
-            </div>
+            />
           ))}
         </div>
 
-        {/* Ambient Overlay - very subtle */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'rgba(244, 243, 239, 0.1)',
-          zIndex: 2
-        }} />
-
-        {/* Hero Content Panel (Clean Editorial Layout) */}
-        <div className="container-premium" style={{
-          position: 'relative',
-          zIndex: 3,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          width: '100%',
-          maxWidth: '850px', // clean architectural layout width
-          padding: '4rem 2rem 3rem 2rem',
-          borderRadius: '16px',
-          background: 'radial-gradient(circle, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.02) 65%, transparent 90%)', // subtle dark-to-transparent overlay
-          animation: 'fadeInHero 1.2s cubic-bezier(0.16, 1, 0.3, 1)'
-        }}>
-          <span style={{
-            fontSize: '0.85rem',
-            letterSpacing: '0.45em',
-            textTransform: 'uppercase',
-            color: 'var(--accent)',
-            fontWeight: 700,
-            marginBottom: '1.5rem',
-            display: 'block'
-          }}>
-            INDIA'S PREMIUM WORKSPACE BRAND
-          </span>
-          
-          <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.75rem, 6vw, 4.5rem)',
-            fontWeight: 800,
-            lineHeight: 1.15, // slightly tighter line height
-            letterSpacing: '-0.02em',
-            color: '#1D1D1D',
-            margin: '0 0 1.5rem 0',
-            maxWidth: '750px'
-          }}>
-            Designed For<br />Better Work.
-          </h1>
-
-          <p style={{
-            fontSize: '1.1rem',
-            fontWeight: 500,
-            color: '#2D2D2D',
-            maxWidth: '550px', // max width 550px
-            lineHeight: 1.6,
-            margin: '0 0 3rem 0',
-            textAlign: 'center'
-          }}>
-            Designed for offices that value comfort and performance.
-          </p>
-          {/* Trust Section */}
-          <div style={{
-            display: 'flex',
-            gap: '2.5rem',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            borderTop: '1px solid rgba(0, 0, 0, 0.08)',
-            paddingTop: '2.5rem',
-            width: '100%',
-            maxWidth: '680px'
-          }}>
-            {[
-              { label: '500+ Projects', icon: <Check size={14} style={{ color: 'var(--accent)' }} /> },
-              { label: '25+ Years', icon: <Award size={14} style={{ color: 'var(--accent)' }} /> },
-              { label: 'Pan India', icon: <MapPin size={14} style={{ color: 'var(--accent)' }} /> },
-              { label: 'Premium Quality', icon: <ShieldCheck size={14} style={{ color: 'var(--accent)' }} /> }
-            ].map((item, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
-                {item.icon}
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <style>{`
+          .slider-arrow:hover {
+            background: var(--accent) !important;
+            border-color: var(--accent) !important;
+            transform: translateY(-50%) scale(1.08);
+          }
+          @media (max-width: 768px) {
+            .slider-arrow {
+              width: 44px !important;
+              height: 44px !important;
+              left: 1rem !important;
+            }
+            .slider-arrow[aria-label="Next Slide"] {
+              right: 1rem !important;
+              left: auto !important;
+            }
+          }
+        `}</style>
       </section>
 
-      {/* SECTION 2 — TRUSTED BY INDUSTRY LEADERS */}
+      {/* SECTION 3 — TRUSTED BY INDUSTRY LEADERS */}
       <section style={{ 
         backgroundColor: 'var(--bg-primary)', 
         padding: '5rem 0',

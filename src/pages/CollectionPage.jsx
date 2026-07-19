@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SlidersHorizontal, Check, FileText } from 'lucide-react';
+import { SlidersHorizontal, Check, FileText, ArrowRight } from 'lucide-react';
 
 // ==========================================
 // 1. ERGONOMIC CHAIRS DATA
@@ -225,7 +225,7 @@ const ADJUSTABLE_DESKS = [
   { id: 'apex-electric', name: 'Apex Compact Adjustable Desk', desc: 'A compact height-adjustable desk designed to fit into home office setups.', image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80' }
 ];
 
-export default function CollectionPage({ setCurrentPage, setSelectedProductId, selectedCategory, setSelectedCategory }) {
+export default function CollectionPage({ setCurrentPage, setSelectedProductId, selectedCategory, setSelectedCategory, selectedSubcategory, setSelectedSubcategory }) {
   
   // Quality standards panel state
   const [showStandards, setShowStandards] = useState(false);
@@ -320,92 +320,39 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
   // SHOWROOM 1: ERGONOMIC CHAIRS
   // -------------------------------------------------------------
   const renderErgonomicChairsShowroom = () => {
-    const ERGO_SUB_CATEGORIES = [
-      {
-        title: 'Executive Chairs',
-        id: 'astra-chair',
-        name: 'Astra Executive Leather Chair',
-        tagline: 'Top-grain luxury leatherite high-back chair with quilted stitching.',
-        image: '/astra_chair.png',
-        desc: 'The Astra Executive Leather Chair is the ultimate expression of corporate comfort and board-level prestige. Finished in hand-stitched leatherite, it features a contoured high-back profile that provides comprehensive alignment.',
-        features: [
-          { title: 'Quilted Zoned Support', desc: 'Segmented foam backing provides orthopedic relief.' },
-          { title: 'Executive Synchro Recline', desc: 'Synchro-tilt recline with variable angle locks.' }
-        ]
-      },
-      {
-        title: 'Task Chairs',
-        id: 'flow-chair',
-        name: 'Flow Executive Office Chair',
-        tagline: 'Fluid high-back silhouette finished with premium architectural accents.',
-        image: '/flow_front.png',
-        desc: 'Designed for leaders, the Flow chair combines executive comfort with sharp, minimalist contouring that commands attention.',
-        features: [
-          { title: 'Spinal Spine Guard', desc: 'Rigid structural spine frame supports direct vertical posture.' },
-          { title: 'Sync-Tilt Comfort', desc: 'Sync-tilt recline keeps feet flat on ground during recline.' }
-        ]
-      },
-      {
-        title: 'Mesh Chairs',
-        id: 'feather-chair',
-        name: 'Ozaya Orthopedic Task Chair',
-        tagline: 'Pebble-shaped lumbar support aligning the spine and promoting wellbeing.',
-        image: '/ozaya_mesh_hero.png',
-        desc: 'Ozaya is inspired by the harmony of nature and the demands of modern work. Its signature pebble-shaped lumbar support mirrors the gentle curves found in nature.',
-        features: [
-          { title: 'Signature Lumbar Support', desc: 'Pebble-shaped design for natural spinal alignment.' },
-          { title: 'Weight-Activated Tilt System', desc: 'Multi-point locking and seat-depth adjustment.' }
-        ]
-      },
-      {
-        title: 'Leather Chairs',
-        id: 'glanza-chair',
-        name: 'Glanza Executive Task Chair',
-        tagline: 'Double-arched support frame built for total thoracic alignment.',
-        image: '/glanza_front.jpg',
-        desc: 'Engineering comfort into corporate suites. The Glanza features double-arched mesh framing that provides active, targeted alignment to the upper and lower lumbar zones.',
-        features: [
-          { title: 'Double Arch Alignment', desc: 'Distinct S-shaped frame tracks and aligns separate lumbar segments.' },
-          { title: 'Thoracic Relief', desc: 'High backrest supports shoulder blades to prevent slouching.' }
-        ]
-      },
-      {
-        title: 'Visitor Chairs',
-        id: 'hola-chair',
-        name: 'Hola Compact Task Chair',
-        tagline: 'Minimalist mesh suspension designed for agile desks and home offices.',
-        image: '/element_chair.png',
-        desc: 'A compact and lightweight task chair with a small footprint. Tucks fully underneath standard desks to maximize space.',
-        features: [
-          { title: 'Compact Frame', desc: 'Small space footprint fits cleanly in cozy home workspaces.' },
-          { title: 'Orthopedic Curve', desc: 'Curved structural frame mirrors the lower back S-curve.' }
-        ]
-      },
-      {
-        title: 'Training Chairs',
-        id: 'zoom-chair',
-        name: 'Zoom Active Focus Chair',
-        tagline: 'Crescent headrest and T-shaped alignment controls for creative tasks.',
-        image: '/zoom_front.jpg',
-        desc: 'Calibrated for intense workflows. Features an adjustable crescent headrest and T-bracket arm adjustment for high-focus coding.',
-        features: [
-          { title: 'Crescent Headrest', desc: 'Curved pillow supports neck movement during deep thought.' },
-          { title: 'T-Bracket Controls', desc: 'Mechanical adjusters calibrate arm pad spacing and height.' }
-        ]
-      },
-      {
-        title: 'Lounge Seating',
-        id: 'hilite-chair',
-        name: 'Hilite Advanced Task Chair',
-        tagline: 'Distinct hook-frame headrest and spring-loaded lumbar tracking.',
-        image: '/hilite_front.png',
-        desc: 'An architectural silhouette engineered for high-performance creative and technology studios.',
-        features: [
-          { title: 'Hook Headrest Frame', desc: 'Architectural hook frame provides target neck support.' },
-          { title: 'Spring-Loaded Lumbar', desc: 'Dynamic lumbar tracker applies constant gentle pressure.' }
-        ]
-      }
-    ];
+    const activeSub = selectedSubcategory || 'frost-and-slate';
+
+    // Seed data representing products inside each series
+    const SERIES_PRODUCTS = {
+      'frost-and-slate': [
+        { id: 'ergo-human-chair', name: 'Ergo Human', series: 'Seating', image: '/ergo_human_front.png' },
+        { id: 'enova-chair', name: 'Enova', series: 'Seating', image: '/enova_front.png' },
+        { id: 'phoenix-chair', name: 'Phoenix', series: 'Seating', image: '/ozaya_mesh_hero.png' },
+        { id: 'astra-chair', name: 'Astra', series: 'Seating', image: '/astra_chair.png' },
+        { id: 'flow-chair', name: 'Flow', series: 'Seating', image: '/flow_front.png' },
+        { id: 'glanza-chair', name: 'Glanza', series: 'Seating', image: '/glanza_front.jpg' },
+        { id: 'hilite-chair', name: 'Hilite', series: 'Seating', image: '/hilite_front.png' },
+        { id: 'zoom-chair', name: 'Zoom', series: 'Seating', image: '/zoom_front.jpg' },
+        { id: 'element-chair', name: 'Element', series: 'Seating', image: '/element_chair.png' },
+        { id: 'hola-chair', name: 'Hola', series: 'Seating', image: '/element_chair.png' },
+        { id: 'apex-chair', name: 'Apex', series: 'Seating', image: '/astra_chair.png' },
+        { id: 'zenith-chair', name: 'Zenith', series: 'Seating', image: '/flow_front.png' }
+      ],
+      'onyx-series': [
+        { id: 'sway-chair', name: 'Sway', series: 'Seating', image: '/flow_front.png' },
+        { id: 'zoom-chair', name: 'Zoom', series: 'Seating', image: '/zoom_front.jpg' },
+        { id: 'hilite-chair', name: 'Hilite', series: 'Seating', image: '/hilite_front.png' },
+        { id: 'flow-chair', name: 'Flow', series: 'Seating', image: '/flow_front.png' }
+      ],
+      'premium-chair': [
+        { id: 'phoenix-chair', name: 'Phoenix', series: 'Seating', image: '/ozaya_mesh_hero.png' },
+        { id: 'element-chair', name: 'Element', series: 'Seating', image: '/element_chair.png' },
+        { id: 'feather-chair', name: 'Feather', series: 'Seating', image: '/feather_front.jpg' },
+        { id: 'hola-chair', name: 'Hola', series: 'Seating', image: '/element_chair.png' }
+      ]
+    };
+
+    const activeProducts = SERIES_PRODUCTS[activeSub] || SERIES_PRODUCTS['frost-and-slate'];
 
     return (
       <div key="ergo-chairs-showroom" style={{ marginBottom: '8rem' }}>
@@ -416,100 +363,133 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
           </h2>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-          {ERGO_SUB_CATEGORIES.map((subCat) => {
-            const bStatus = brochureStatus[subCat.id] || '';
+        {/* Subcategory Series Tabs */}
+        <div style={{ display: 'flex', gap: '2.5rem', borderBottom: '1px solid rgba(0,0,0,0.06)', paddingBottom: '1rem', marginBottom: '3.5rem', overflowX: 'auto', scrollbarWidth: 'none' }}>
+          {[
+            { label: 'Frost and Slate', id: 'frost-and-slate' },
+            { label: 'Onyx Series', id: 'onyx-series' },
+            { label: 'Premium Chair', id: 'premium-chair' }
+          ].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setSelectedSubcategory(tab.id)}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '0.95rem',
+                fontWeight: activeSub === tab.id ? 700 : 400,
+                color: activeSub === tab.id ? 'var(--accent)' : 'var(--text-secondary)',
+                cursor: 'pointer',
+                position: 'relative',
+                padding: '0.25rem 0',
+                fontFamily: 'var(--font-sans)',
+                transition: 'color 0.25s ease'
+              }}
+            >
+              {tab.label}
+              {activeSub === tab.id && (
+                <span style={{ position: 'absolute', bottom: '-17px', left: 0, width: '100%', height: '2px', backgroundColor: 'var(--accent)' }} />
+              )}
+            </button>
+          ))}
+        </div>
+
+        <div className="seating-grid-layout" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', 
+          gap: '2rem'
+        }}>
+          {activeProducts.map((subCat) => {
             return (
               <div 
                 key={subCat.id} 
-                id={`subcategory-${subCat.title.toLowerCase().replace(' ', '-')}`}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                  gap: '4rem',
-                  alignItems: 'center',
-                  borderBottom: '1px solid rgba(0,0,0,0.05)',
-                  paddingBottom: '4rem'
+                id={`subcategory-${subCat.id}`}
+                onClick={() => {
+                  const rawId = subCat.id.replace('-chair', '');
+                  window.history.pushState({ page: 'product', prodId: subCat.id }, '', `/collection/ergonomic-chairs/${rawId}`);
+                  setSelectedProductId(subCat.id);
+                  setCurrentPage('product');
                 }}
+                style={{
+                  cursor: 'pointer',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'transform 0.3s ease'
+                }}
+                className="concept-chair-card"
               >
                 {/* Image Section */}
-                <div style={{
-                  backgroundColor: '#FCFCFA',
-                  borderRadius: '12px',
-                  border: '1px solid var(--border-color)',
-                  padding: '3rem 2rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '340px',
-                  overflow: 'hidden'
-                }}>
+                <div 
+                  className="concept-image-container"
+                  style={{
+                    backgroundColor: '#F5F5F5',
+                    borderRadius: '6px',
+                    padding: '2rem 1.5rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: '280px',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    transition: 'background-color 0.3s ease'
+                  }}
+                >
                   <img 
                     src={subCat.image} 
                     alt={subCat.name} 
-                    style={{ maxHeight: '90%', objectFit: 'contain' }} 
+                    style={{ 
+                      maxHeight: '90%', 
+                      maxWidth: '90%', 
+                      objectFit: 'contain',
+                      transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }} 
+                    className="concept-chair-img"
                   />
                 </div>
 
                 {/* Details Section */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <div>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.25rem' }}>
-                      {subCat.title}
-                    </span>
-                    <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 0.5rem 0' }}>
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'center', 
+                  marginTop: '0.85rem',
+                  padding: '0 0.15rem'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span style={{ 
+                      fontFamily: 'var(--font-sans)', 
+                      fontSize: '1.05rem', 
+                      fontWeight: 600, 
+                      color: 'var(--text-primary)' 
+                    }}>
                       {subCat.name}
-                    </h3>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.5, margin: 0 }}>
-                      {subCat.tagline}
-                    </p>
+                    </span>
+                    <span style={{ 
+                      fontSize: '0.75rem', 
+                      color: 'var(--text-secondary)',
+                      marginTop: '0.2rem',
+                      fontWeight: 400
+                    }}>
+                      {subCat.series}
+                    </span>
                   </div>
 
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 300, margin: 0 }}>
-                    {subCat.desc}
-                  </p>
-
-                  {/* Bullet features */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: '0.5rem 0' }}>
-                    {subCat.features.map((feat, fIdx) => (
-                      <div key={fIdx} style={{ fontSize: '0.85rem' }}>
-                        <strong style={{ color: 'var(--text-primary)', display: 'block', fontWeight: 600 }}>✓ {feat.title}</strong>
-                        <span style={{ color: 'var(--text-secondary)', fontWeight: 300 }}>{feat.desc}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Actions */}
-                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
-                    <button
-                      onClick={(e) => triggerEnquiry(subCat, e)}
-                      className="btn-primary"
-                      style={{ padding: '0.9rem 2rem', fontSize: '0.85rem' }}
-                    >
-                      <span>Enquire</span>
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        const rawId = subCat.id.replace('-chair', '');
-                        window.history.pushState({ page: 'product', prodId: subCat.id }, '', `/collection/ergonomic-chairs/${rawId}`);
-                        setSelectedProductId(subCat.id);
-                        setCurrentPage('product');
-                      }}
-                      className="btn-secondary"
-                      style={{ padding: '0.9rem 2rem', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center' }}
-                    >
-                      <span>Explore Details →</span>
-                    </button>
-
-                    <button
-                      onClick={(e) => triggerDownload(subCat.id, e)}
-                      className="btn-secondary"
-                      style={{ padding: '0.9rem 1.5rem', fontSize: '0.8rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
-                    >
-                      <FileText size={14} />
-                      <span>{bStatus === 'loading' ? '...' : bStatus === 'downloaded' ? '✓' : 'Brochure'}</span>
-                    </button>
+                  {/* Arrow Icon Circle */}
+                  <div 
+                    className="concept-arrow-btn"
+                    style={{
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
+                      backgroundColor: '#2C2B29',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      transition: 'background-color 0.3s ease, transform 0.3s ease'
+                    }}
+                  >
+                    <ArrowRight size={14} strokeWidth={2.5} />
                   </div>
                 </div>
               </div>
@@ -1219,6 +1199,19 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
             renderActiveShowroom(selectedCategory)
           )}
         </div>
+
+        <style>{`
+          .concept-chair-card:hover .concept-chair-img {
+            transform: scale(1.06);
+          }
+          .concept-chair-card:hover .concept-image-container {
+            background-color: #ECECEC !important;
+          }
+          .concept-chair-card:hover .concept-arrow-btn {
+            background-color: var(--accent) !important;
+            transform: translate3d(2px, -2px, 0);
+          }
+        `}</style>
 
       </div>
 
