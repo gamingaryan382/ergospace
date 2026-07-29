@@ -2,6 +2,173 @@ export const PRODUCT_DETAILS = {
   // ==========================================
   // --- ERGONOMIC CHAIRS (type: 'chair') ---
   // ==========================================
+  'cozy': {
+    id: 'cozy',
+    type: 'chair',
+    name: 'COZY',
+    tagline: 'Ultra-luxurious electric leather recliner executive chair for ultimate comfort.',
+    bannerImg: '/cozy_poster.jpg',
+    images: [
+      '/cozy_1.png',
+      '/cozy_2.png'
+    ],
+    specs: {
+      backrest: 'Ergonomic plush padded leather backrest with electric reclining',
+      armrest: 'Padded leather executive armrests',
+      seat: 'Genuine leather (Only Body Touch Area) finished recliner cushion',
+      mechanism: 'Electric Recliner feature for ease of reclining & comfort',
+      material: 'Genuine leather (Only Body Touch Area)',
+      application: 'Executive Suites / High-End Presidential Workspaces',
+      legs: 'Aluminum Base with Nylon castors'
+    },
+    overview: [
+      "The COZY executive chair is the pinnacle of luxury and ergonomic relaxation. Upholstered in genuine leather across all body-touch areas, it features an effortless electric reclining system that allows seamless transition between upright work and restful lounging.",
+      "Engineered with a high-strength solid aluminum base and smooth nylon castors, COZY offers plush padding and pneumatic height control for unmatched executive comfort."
+    ],
+    gallery: [
+      '/cozy_1.png',
+      '/cozy_2.png'
+    ],
+    colors: [
+      { name: 'Warm Taupe / Genuine Leather', hex: '#B8A495', filter: 'none' }
+    ]
+  },
+  'rover': {
+    id: 'rover',
+    type: 'chair',
+    name: 'ROVER',
+    tagline: 'High-executive charcoal leather electric recliner chair for premium workspace comfort.',
+    bannerImg: '/rover_poster.jpg',
+    images: [
+      '/rover_1.jpg',
+      '/rover_2.jpg'
+    ],
+    specs: {
+      backrest: 'Plush charcoal leather backrest with electric reclining system',
+      armrest: 'Executive padded armrests with chrome accents',
+      seat: 'Genuine leather finished recliner ( Only Body Touch Area)',
+      mechanism: 'Electric Recliner feature for ease of reclining & comfort',
+      material: 'Genuine leather finished recliner ( Only Body Touch Area)',
+      application: 'Presidential Suites / Executive Workspace Environments',
+      legs: 'Aluminum Base with Nylon castors'
+    },
+    overview: [
+      "The ROVER executive recliner chair seamlessly blends deep charcoal leather elegance with electric push-button relaxation. Engineered with genuine leather across body-touch surfaces and an integrated powered footrest.",
+      "Built upon a heavy-duty polished aluminum base with smooth nylon castors, ROVER provides effortless reclining angles and pneumatic height adjustment for executive leadership."
+    ],
+    gallery: [
+      '/rover_1.jpg',
+      '/rover_2.jpg'
+    ],
+    colors: [
+      { name: 'Charcoal Grey / Genuine Leather', hex: '#4A4A4A', filter: 'none' }
+    ]
+  },
+  'amaze': {
+    id: 'amaze',
+    type: 'chair',
+    name: 'Amaze',
+    tagline: 'Ergonomic mesh task seating with adjustable lumbar support and synchro tilt mechanism.',
+    bannerImg: '/amaze_poster.png',
+    images: [
+      '/amaze_1.jpg',
+      '/amaze_2.jpg',
+      '/amaze_new_3.jpg',
+      '/amaze_3.jpg',
+      '/amaze_4.jpg'
+    ],
+    specs: {
+      backrest: 'Adjustable lumbar support',
+      armrest: '1 D Adjustable Armrest',
+      seat: 'Ergonomic seat pan cushion (Colour Grey)',
+      mechanism: 'Synchro Tilt Mechanism With one point locking',
+      material: 'Breathable grey polymer mesh suspension',
+      application: 'Professional Executive Task Seating / Workspace Environments',
+      legs: 'Spider Chrome base with durable castors'
+    },
+    overview: [
+      "The Amaze task chair combines sleek posture support with dynamic ergonomic adjustments. Featuring 1D adjustable armrests, a responsive synchro tilt mechanism with single point locking, and targeted adjustable lumbar support.",
+      "Finished with an architectural Spider Chrome base and soft grey mesh, the Amaze provides thermal breathability and robust alignment for modern productivity."
+    ],
+    gallery: [
+      '/amaze_1.jpg',
+      '/amaze_2.jpg',
+      '/amaze_new_3.jpg',
+      '/amaze_3.jpg',
+      '/amaze_4.jpg'
+    ],
+    colors: [
+      { name: 'Colour Grey', hex: '#808080', filter: 'none' }
+    ]
+  },
+  'beta': {
+    id: 'beta',
+    type: 'chair',
+    name: 'BETA',
+    tagline: 'Modern executive mesh task chair with fixed armrests and center tilt locking mechanism.',
+    bannerImg: '/beta_poster.jpg',
+    images: [
+      '/beta_1.png',
+      '/beta_2.png',
+      '/beta_3.png',
+      '/beta_4.png'
+    ],
+    specs: {
+      backrest: 'Ergonomic breathable mesh backrest with structural posture frame',
+      armrest: 'Fixed Armrest',
+      seat: 'Pneumatic height adjustment seat pan',
+      mechanism: 'Center Tilt Mechanism with one point Locking',
+      material: 'Breathable grey mesh & durable polymer frame',
+      application: 'Professional Executive Task Seating / Workspace Environments',
+      legs: 'Spider Chrome Base'
+    },
+    overview: [
+      "The BETA task chair delivers minimalist elegance and dependable posture support. Designed with fixed armrests and a responsive center tilt mechanism with single-point locking.",
+      "Engineered with a high-shine Spider Chrome base and breathable mesh suspension, the BETA chair ensures day-long thermal comfort and sleek corporate aesthetics."
+    ],
+    gallery: [
+      '/beta_1.png',
+      '/beta_2.png',
+      '/beta_3.png',
+      '/beta_4.png'
+    ],
+    colors: [
+      { name: 'Grey / White Frame', hex: '#BEBEBE', filter: 'none' }
+    ]
+  },
+  'flare': {
+    id: 'flare',
+    type: 'chair',
+    name: 'FLARE',
+    tagline: 'Modern executive white task chair with fixed armrests and center tilt locking mechanism.',
+    bannerImg: '/flare_poster.jpg',
+    images: [
+      '/flare_1.jpg',
+      '/flare_2.jpg',
+      '/flare_3.jpg'
+    ],
+    specs: {
+      backrest: 'Ergonomic slatted white backrest frame',
+      armrest: 'Fixed Armrest',
+      seat: 'Ergonomic contoured seat pan cushion (Colour: White frame)',
+      mechanism: 'Center Tilt Mechanism with one point Locking',
+      material: 'Breathable grey mesh & white polymer exoskeleton',
+      application: 'Professional Executive Task Seating / Workspace Environments',
+      legs: 'Spider Chrome'
+    },
+    overview: [
+      "The FLARE task chair combines a modern white aesthetic with dynamic ergonomic support. Featuring fixed armrests, responsive center tilt mechanism with single-point locking, and slatted backrest support.",
+      "Crafted with a sleek white polymer frame and a high-shine Spider Chrome base, the FLARE delivers day-long comfort and architectural style for high-end office environments."
+    ],
+    gallery: [
+      '/flare_1.jpg',
+      '/flare_2.jpg',
+      '/flare_3.jpg'
+    ],
+    colors: [
+      { name: 'Colour: White', hex: '#FFFFFF', filter: 'none' }
+    ]
+  },
   'enova': {
     id: 'enova',
     type: 'chair',

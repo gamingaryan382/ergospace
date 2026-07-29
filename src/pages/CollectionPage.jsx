@@ -325,6 +325,9 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
     // Seed data representing products inside each series
     const SERIES_PRODUCTS = {
       'frost-and-slate': [
+        { id: 'amaze-chair', name: 'Amaze', series: 'Seating', image: '/amaze_1.jpg' },
+        { id: 'beta-chair', name: 'BETA', series: 'Seating', image: '/beta_2.png' },
+        { id: 'flare-chair', name: 'FLARE', series: 'Seating', image: '/flare_2.jpg' },
         { id: 'ergo-human-chair', name: 'Ergo Human', series: 'Seating', image: '/ergo_human_front.png' },
         { id: 'enova-chair', name: 'Enova', series: 'Seating', image: '/enova_front.png' },
         { id: 'phoenix-chair', name: 'Phoenix', series: 'Seating', image: '/ozaya_mesh_hero.png' },
@@ -345,7 +348,8 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
         { id: 'flow-chair', name: 'Flow', series: 'Seating', image: '/flow_front.png' }
       ],
       'premium-chair': [
-        { id: 'phoenix-chair', name: 'Phoenix', series: 'Seating', image: '/ozaya_mesh_hero.png' },
+        { id: 'cozy-chair', name: 'COZY', series: 'Seating', image: '/cozy_1.png' },
+        { id: 'rover-chair', name: 'ROVER', series: 'Seating', image: '/rover_1.jpg' },
         { id: 'element-chair', name: 'Element', series: 'Seating', image: '/element_chair.png' },
         { id: 'feather-chair', name: 'Feather', series: 'Seating', image: '/feather_front.jpg' },
         { id: 'hola-chair', name: 'Hola', series: 'Seating', image: '/element_chair.png' }

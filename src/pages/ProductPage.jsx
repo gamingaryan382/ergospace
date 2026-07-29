@@ -247,74 +247,7 @@ export default function ProductPage({ productId, setCurrentPage }) {
 
       </section>
 
-      {/* DESCRIPTION TABS: Gallery | Product Detail */}
-      <section className="section-padding" style={{ backgroundColor: '#FCFCFA', borderTop: '1px solid var(--border-color)' }}>
-        <div className="container-premium">
-          
-          {/* Tab buttons */}
-          <div style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px solid var(--border-color)', marginBottom: '3.5rem', gap: '3rem' }}>
-            {[
-              { id: 'gallery', label: 'Gallery' },
-              { id: 'details', label: 'Product Detail' }
-            ].map((tab) => {
-              const isSelected = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    paddingBottom: '1rem',
-                    cursor: 'pointer',
-                    fontSize: '0.95rem',
-                    fontWeight: isSelected ? 600 : 400,
-                    color: isSelected ? 'var(--text-primary)' : 'var(--text-tertiary)',
-                    borderBottom: isSelected ? '2px solid var(--text-primary)' : '2px solid transparent',
-                    marginBottom: '-1px',
-                    transition: 'var(--transition-fast)'
-                  }}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
 
-          {/* Tab content panel */}
-          <div style={{ maxWidth: '850px', margin: '0 auto' }}>
-            
-            {activeTab === 'gallery' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-                {product.gallery ? product.gallery.map((gImg, idx) => (
-                  <div key={idx} style={{ borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-subtle)' }}>
-                    <img src={gImg} alt={`${product.name} setup`} style={{ width: '100%', height: 'auto', display: 'block' }} />
-                  </div>
-                )) : (
-                  <div style={{ textAlign: 'center', color: 'var(--text-tertiary)', padding: '2rem' }}>
-                    Gallery images details coming soon.
-                  </div>
-                )}
-              </div>
-            )}
-
-            {activeTab === 'details' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <p style={{ fontSize: '1.05rem', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.6, margin: 0 }}>
-                  {product.tagline}
-                </p>
-                {product.overview.map((para, idx) => (
-                  <p key={idx} style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.8, margin: 0 }}>
-                    {para}
-                  </p>
-                ))}
-              </div>
-            )}
-
-          </div>
-
-        </div>
-      </section>
 
       {/* FLOAT ENQUIRY CTA */}
       <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 999, display: 'flex', alignItems: 'center' }}>

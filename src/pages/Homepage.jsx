@@ -49,39 +49,34 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
-      id: 'chairs',
-      name: 'ERGONOMIC CHAIRS',
-      heading: 'Comfort engineered for productivity.',
-      image: '/hero_chairs.png',
+      id: 'banner1',
+      name: 'Elevate Every Workday with Ergonomic Seating',
+      image: '/hero_banner_1.jpg',
       categoryKey: 'Ergonomic Chairs'
     },
     {
-      id: 'workstations',
-      name: 'WORKSTATIONS',
-      heading: 'Flexible modular workstations for modern offices.',
-      image: '/hero_workstations.png',
-      categoryKey: 'Workstations'
-    },
-    {
-      id: 'collaborative',
-      name: 'COLLABORATIVE SPACES',
-      heading: 'Designed to bring teams together.',
-      image: '/hero_collaborative.png',
-      categoryKey: 'Workstations'
-    },
-    {
-      id: 'desks',
-      name: 'HEIGHT ADJUSTABLE DESKS',
-      heading: 'Move naturally throughout the workday.',
-      image: '/hero_height_desks.png',
+      id: 'banner2',
+      name: 'Flexible Desks for Modern Work',
+      image: '/hero_banner_2.jpg',
       categoryKey: 'Height Adjustable Desks'
     },
     {
-      id: 'storage',
-      name: 'STORAGE SOLUTIONS',
-      heading: 'Intelligent storage for organised workplaces.',
-      image: '/hero_storage.png',
-      categoryKey: 'Storage & Accessories'
+      id: 'banner3',
+      name: 'Comfort That Complements Every Workspace',
+      image: '/hero_banner_3.jpg',
+      categoryKey: 'Lounge Seating'
+    },
+    {
+      id: 'banner4',
+      name: 'Create Spaces People Love to Gather',
+      image: '/hero_banner_4.jpg',
+      categoryKey: 'Cafeteria & Collaborative'
+    },
+    {
+      id: 'banner5',
+      name: 'Workstations Designed for the Way You Work',
+      image: '/hero_banner_5.jpg',
+      categoryKey: 'Workstations'
     }
   ];
 
@@ -196,19 +191,26 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
       
       {/* SECTION 1 — PREMIUM SLIDESHOW HERO */}
       <section style={{
-        height: '100vh',
         width: '100%',
+        paddingTop: '122px',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: 'var(--bg-dark)'
+        backgroundColor: '#F5F3EE'
       }}>
-        {/* Slides Container */}
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+        {/* Slides Container with exact 1000/460 aspect ratio so image is 100% visible with zero cropping */}
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '1000 / 460' }}>
           {slides.map((slide, idx) => {
             const isActive = idx === currentSlide;
             return (
               <div
                 key={slide.id}
+                onClick={() => {
+                  if (setSelectedCategory) {
+                    setSelectedCategory(slide.categoryKey);
+                  }
+                  setCurrentPage('collection');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 style={{
                   position: 'absolute',
                   top: 0,
@@ -220,97 +222,20 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
                   transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease',
                   zIndex: isActive ? 5 : 1,
                   pointerEvents: isActive ? 'auto' : 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  boxSizing: 'border-box'
+                  cursor: 'pointer'
                 }}
               >
-                {/* Background Image (Full screen, no cut-out) */}
+                {/* Full HD Banner Image - No cropping, no quality loss */}
                 <img
                   src={slide.image}
                   alt={slide.name}
                   style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
-                    zIndex: 1
+                    objectFit: 'contain',
+                    display: 'block'
                   }}
                 />
-
-                {/* Dark Gradient Overlay for readability */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  background: 'linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%)',
-                  zIndex: 2
-                }} />
-
-                {/* Content Panel */}
-                <div className="container-premium" style={{
-                  position: 'relative',
-                  zIndex: 3,
-                  width: '100%',
-                  padding: '0 8%',
-                  boxSizing: 'border-box',
-                  color: '#FFFFFF',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                  alignItems: 'flex-start',
-                  textAlign: 'left'
-                }}>
-                  {/* Small Label */}
-                  <span style={{
-                    fontSize: '0.85rem',
-                    fontWeight: 700,
-                    color: 'var(--accent)',
-                    letterSpacing: '0.3em',
-                    textTransform: 'uppercase'
-                  }}>
-                    {slide.name}
-                  </span>
-
-                  {/* Heading */}
-                  <h1 style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: 'clamp(2.25rem, 5vw, 4rem)',
-                    fontWeight: 800,
-                    lineHeight: 1.15,
-                    margin: '0 0 1.5rem 0',
-                    letterSpacing: '-0.02em',
-                    maxWidth: '850px'
-                  }}>
-                    {slide.heading}
-                  </h1>
-
-                  {/* Button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (setSelectedCategory) {
-                        setSelectedCategory(slide.categoryKey);
-                      }
-                      setCurrentPage('collection');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="btn-primary"
-                    style={{
-                      padding: '1rem 2.25rem',
-                      fontSize: '0.88rem',
-                      borderRadius: '6px',
-                      border: 'none',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <span>Explore Collection</span>
-                  </button>
-                </div>
               </div>
             );
           })}
@@ -321,79 +246,82 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
           onClick={handlePrevSlide}
           style={{
             position: 'absolute',
-            left: '2.5rem',
+            left: '1.5rem',
             top: '50%',
             transform: 'translateY(-50%)',
             zIndex: 10,
-            background: 'rgba(255, 255, 255, 0.1)',
-            border: '1px solid rgba(255, 255, 255, 0.25)',
+            background: 'rgba(0, 0, 0, 0.25)',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
             color: '#FFFFFF',
-            width: '54px',
-            height: '54px',
+            width: '46px',
+            height: '46px',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
-            backdropFilter: 'blur(8px)'
+            backdropFilter: 'blur(4px)'
           }}
           className="slider-arrow"
           aria-label="Previous Slide"
         >
-          <ArrowLeft size={22} />
+          <ArrowLeft size={20} />
         </button>
         <button 
           onClick={handleNextSlide}
           style={{
             position: 'absolute',
-            right: '2.5rem',
+            right: '1.5rem',
             top: '50%',
             transform: 'translateY(-50%)',
             zIndex: 10,
-            background: 'rgba(255, 255, 255, 0.1)',
-            border: '1px solid rgba(255, 255, 255, 0.25)',
+            background: 'rgba(0, 0, 0, 0.25)',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
             color: '#FFFFFF',
-            width: '54px',
-            height: '54px',
+            width: '46px',
+            height: '46px',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
-            backdropFilter: 'blur(8px)'
+            backdropFilter: 'blur(4px)'
           }}
           className="slider-arrow"
           aria-label="Next Slide"
         >
-          <ArrowRight size={22} />
+          <ArrowRight size={20} />
         </button>
 
         {/* Slide Indicators (Dots) */}
         <div style={{
           position: 'absolute',
-          bottom: '2.5rem',
+          bottom: '1rem',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 10,
           display: 'flex',
-          gap: '0.85rem'
+          gap: '0.65rem'
         }}>
           {slides.map((_, idx) => (
             <button
               key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              style={{
-                width: idx === currentSlide ? '28px' : '8px',
-                height: '8px',
-                borderRadius: '4px',
-                backgroundColor: idx === currentSlide ? 'var(--accent)' : 'rgba(255, 255, 255, 0.4)',
-                border: 'none',
-                padding: 0,
-                cursor: 'pointer',
-                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentSlide(idx);
               }}
+              style={{
+                width: idx === currentSlide ? '32px' : '10px',
+                height: '10px',
+                borderRadius: '5px',
+                backgroundColor: idx === currentSlide ? '#051923' : 'rgba(5, 25, 35, 0.3)',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.35s ease'
+              }}
+              aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
         </div>

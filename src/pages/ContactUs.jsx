@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, Clock, Send, CheckCircle, Navigation } from 'lucide-react';
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', message: '' });
@@ -18,17 +18,26 @@ export default function ContactUs() {
     <div style={{ paddingTop: '1.5rem', minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
       <div className="container-premium" style={{ paddingBottom: '6rem' }}>
         
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
-            Get In Touch
-          </span>
-          <h1 className="editorial-title" style={{ marginTop: '0.5rem', marginBottom: '1.25rem' }}>
-            Contact Us
-          </h1>
-          <p className="editorial-subtitle" style={{ margin: '0 auto', maxWidth: '650px' }}>
-            Have a question about our ergonomic seating, height-adjustable tables, or custom office layout designs? Connect with our team of specialists.
-          </p>
+        {/* TOP HERO BANNER */}
+        <div style={{
+          width: '100%',
+          marginBottom: '4rem',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
+          border: '1px solid var(--border-color)',
+          backgroundColor: '#FFFFFF'
+        }}>
+          <img 
+            src="/contact_banner.jpg" 
+            alt="Collaborate with Confidence - ErgoSpace Workspace Solutions" 
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain'
+            }}
+          />
         </div>
 
         <div style={{
@@ -197,6 +206,212 @@ export default function ContactUs() {
                 </button>
               </form>
             )}
+          </div>
+        </div>
+
+        {/* FOUR ADDRESS BOXES (CORPORATE OFFICE & 3 MANUFACTURING UNITS) */}
+        <div style={{ marginTop: '5rem' }}>
+          <div style={{ marginBottom: '2.5rem', textAlign: 'left' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+              Locations & Facilities
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.5rem' }}>
+              Our Office & Manufacturing Facilities
+            </h2>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.75rem'
+          }}>
+            {/* Box 1: Corporate Office & Showroom */}
+            <div style={{
+              backgroundColor: '#F5F5F3',
+              borderRadius: '10px',
+              padding: '2.25rem',
+              border: '1px solid #E5E5E0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative'
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#E63946', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    CORPORATE OFFICE
+                  </span>
+                  <a 
+                    href="https://maps.google.com/?q=Urbtech+Trade+Center+Noida+Sector+132" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Get Directions"
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(0, 0, 0, 0.35)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#000000',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = '#FFFFFF'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#000000'; }}
+                  >
+                    <Navigation size={15} />
+                  </a>
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111111', margin: '0.75rem 0 0.5rem 0', lineHeight: 1.3 }}>
+                  Corporate Office / Showroom
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+                  Tower IS5, Ground & 1st Floor, Urbtech Trade Center, 35, adjacent DPS School, Block B, Sector 132, Noida, Uttar Pradesh 201304
+                </p>
+              </div>
+            </div>
+
+            {/* Box 2: Manufacturing Unit 1 */}
+            <div style={{
+              backgroundColor: '#F5F5F3',
+              borderRadius: '10px',
+              padding: '2.25rem',
+              border: '1px solid #E5E5E0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative'
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#E63946', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    UNIT 1
+                  </span>
+                  <a 
+                    href="https://maps.google.com/?q=Plot+163+Sector+6+IMT+Manesar+Gurugram" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Get Directions"
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(0, 0, 0, 0.35)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#000000',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = '#FFFFFF'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#000000'; }}
+                  >
+                    <Navigation size={15} />
+                  </a>
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111111', margin: '0.75rem 0 0.5rem 0', lineHeight: 1.3 }}>
+                  Manufacturing Unit 1
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+                  Plot No. 163, Sector 6, IMT Manesar, Gurugram, Haryana 122051
+                </p>
+              </div>
+            </div>
+
+            {/* Box 3: Manufacturing Unit 2 */}
+            <div style={{
+              backgroundColor: '#F5F5F3',
+              borderRadius: '10px',
+              padding: '2.25rem',
+              border: '1px solid #E5E5E0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative'
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#E63946', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    UNIT 2
+                  </span>
+                  <a 
+                    href="https://maps.google.com/?q=Plot+144+Sector+3+IMT+Manesar+Gurugram" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Get Directions"
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(0, 0, 0, 0.35)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#000000',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = '#FFFFFF'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#000000'; }}
+                  >
+                    <Navigation size={15} />
+                  </a>
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111111', margin: '0.75rem 0 0.5rem 0', lineHeight: 1.3 }}>
+                  Manufacturing Unit 2
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+                  Plot No. 144, Sector 3, IMT Manesar, Gurugram, Haryana 122051
+                </p>
+              </div>
+            </div>
+
+            {/* Box 4: Manufacturing Unit 3 */}
+            <div style={{
+              backgroundColor: '#F5F5F3',
+              borderRadius: '10px',
+              padding: '2.25rem',
+              border: '1px solid #E5E5E0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              position: 'relative'
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#E63946', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    UNIT 3
+                  </span>
+                  <a 
+                    href="https://maps.google.com/?q=Sector+7+A+Met+Yakubpur+Badli+Jhajjar" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Get Directions"
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(0, 0, 0, 0.35)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#000000',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.color = '#FFFFFF'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#000000'; }}
+                  >
+                    <Navigation size={15} />
+                  </a>
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111111', margin: '0.75rem 0 0.5rem 0', lineHeight: 1.3 }}>
+                  Manufacturing Unit 3
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+                  Plot No. 32, Street No. 04, Sector 7 A, Met Yakubpur Badli, Jhajjar, Haryana 124105
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

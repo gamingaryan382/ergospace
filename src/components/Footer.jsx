@@ -161,10 +161,10 @@ export default function Footer({ setCurrentPage, setSelectedCategory }) {
               }}
             >
               <img 
-                src="/logo.jpg" 
+                src="/logo.png" 
                 alt="ErgoSpace Logo" 
                 style={{ 
-                  height: '36px', 
+                  height: '42px', 
                   width: 'auto', 
                   objectFit: 'contain', 
                   mixBlendMode: 'multiply' 

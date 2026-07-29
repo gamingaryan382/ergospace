@@ -166,10 +166,10 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
         <div 
           style={{
             height: '42px',
-            backgroundColor: '#EDEBE4',
-            borderBottom: '1px solid #D9D7CE',
+            backgroundColor: '#F7F4EC',
+            borderBottom: '1px solid #E0DCD3',
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'stretch',
             fontSize: '0.70rem',
             fontWeight: 600,
             letterSpacing: '0.08em',
@@ -180,46 +180,55 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-            {/* Left Side Links */}
-            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'nowrap' }}>
+            {/* Left Side Links (WITH BOXES & VERTICAL BORDER LINES) */}
+            <div style={{ display: 'flex', alignItems: 'stretch', height: '100%' }}>
               <button 
                 onClick={() => handleNavClick('about')}
-                className="top-nav-link"
                 style={{ 
-                  background: 'none', 
+                  background: '#FFFFFF',
                   border: 'none',
+                  borderLeft: '1px solid #E0DCD3',
+                  borderRight: '1px solid #E0DCD3',
                   cursor: 'pointer', 
-                  color: '#000000', 
-                  fontWeight: 600, 
+                  color: '#051923', 
+                  fontWeight: 700, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
-                  padding: 0,
-                  transition: 'color 0.25s ease' 
+                  padding: '0 1.5rem',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  transition: 'background-color 0.2s ease, color 0.2s ease' 
                 }}
               >
                 Discover ErgoSpace
               </button>
               <button 
                 onClick={() => window.open('https://shop.ergospace.in', '_blank')}
-                className="top-nav-link"
                 style={{ 
-                  background: 'none', 
+                  background: '#F7F4EC',
                   border: 'none',
+                  borderRight: '1px solid #E0DCD3',
                   cursor: 'pointer', 
-                  color: 'var(--accent)', // Shop Now in red text only
-                  fontWeight: 700, 
+                  color: '#051923', 
+                  fontWeight: 600, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
-                  padding: 0,
-                  transition: 'color 0.25s ease' 
+                  padding: '0 1.5rem',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  transition: 'background-color 0.2s ease, color 0.2s ease' 
                 }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#FFFFFF'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F7F4EC'; }}
               >
                 Shop Now
               </button>
             </div>
 
-            {/* Right Side Links */}
-            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', width: '600px', justifyContent: 'flex-start', flexWrap: 'nowrap', marginLeft: 'auto' }}>
+            {/* Right Side Links (CLEAN TEXT LINKS WITHOUT BOXES OR VERTICAL BORDERS) */}
+            <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center', flexWrap: 'nowrap', marginLeft: 'auto' }}>
               <button 
                 onClick={() => handleNavClick('wheretobuy')}
                 className="top-nav-link"
@@ -227,7 +236,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                   background: 'none', 
                   border: 'none',
                   cursor: 'pointer', 
-                  color: '#000000', 
+                  color: '#051923', 
                   fontWeight: 600, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
@@ -244,7 +253,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                   background: 'none', 
                   border: 'none',
                   cursor: 'pointer', 
-                  color: '#000000', 
+                  color: '#051923', 
                   fontWeight: 600, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
@@ -261,7 +270,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                   background: 'none', 
                   border: 'none',
                   cursor: 'pointer', 
-                  color: '#000000', 
+                  color: '#051923', 
                   fontWeight: 600, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
@@ -278,7 +287,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                   background: 'none', 
                   border: 'none',
                   cursor: 'pointer', 
-                  color: '#000000', 
+                  color: '#051923', 
                   fontWeight: 600, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
@@ -312,10 +321,10 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
               style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
             >
               <img 
-                src="/logo.jpg" 
+                src="/logo.png" 
                 alt="ErgoSpace Logo" 
                 style={{ 
-                  height: isScrolled ? '38px' : '48px', 
+                  height: isScrolled ? '40px' : '52px', 
                   width: 'auto', 
                   objectFit: 'contain', 
                   mixBlendMode: 'multiply',
