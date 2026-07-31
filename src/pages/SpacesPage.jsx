@@ -8,7 +8,8 @@ const SPACES_DATA = [
     icon: <Building2 size={24} />,
     image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
     description: 'Calibrated architectural environments designed to support intense cognitive focus, active workplace flow, and modern aesthetics. Features cable-managed workstation benches, orthopedic task seating, and turnkey executive setups.',
-    focusArea: 'Enterprise Headquarters & Innovation Hubs'
+    focusArea: 'Enterprise Headquarters & Innovation Hubs',
+    projectCategory: 'Corporate Office'
   },
   {
     id: 'co-working',
@@ -16,7 +17,8 @@ const SPACES_DATA = [
     icon: <Coffee size={24} />,
     image: '/coworking_space.png',
     description: 'Heavy-duty commercial setups engineered for high-throughput daily operators. Offers maximum versatility, scratch-resistant finishes, and adaptable adjustments suited to diverse occupant profiles.',
-    focusArea: 'Flexible Office Networks & Shared Studios'
+    focusArea: 'Flexible Office Networks & Shared Studios',
+    projectCategory: 'Workstations Layout'
   },
   {
     id: 'education',
@@ -24,7 +26,8 @@ const SPACES_DATA = [
     icon: <GraduationCap size={24} />,
     image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
     description: 'Ergonomic lecture hall seating, collaborative library pods, and university lounge systems built to foster interactive learning, research focus, and student wellbeing.',
-    focusArea: 'University Campuses & Advanced Research Centers'
+    focusArea: 'University Campuses & Advanced Research Centers',
+    projectCategory: 'Institutional / Educational'
   },
   {
     id: 'hospitality',
@@ -32,7 +35,8 @@ const SPACES_DATA = [
     icon: <Coffee size={24} />,
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
     description: 'Comfort-first luxury lounge chairs, reception lounges, and executive suite layouts designed to project prestige, high-end hospitality, and deep relaxation.',
-    focusArea: 'Premium Hotel Lobbies & Executive Boardrooms'
+    focusArea: 'Premium Hotel Lobbies & Executive Boardrooms',
+    projectCategory: 'Lounge & Cafe'
   },
   {
     id: 'healthcare',
@@ -40,7 +44,8 @@ const SPACES_DATA = [
     icon: <HeartPulse size={24} />,
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
     description: 'Specialized orthopedic seating, cleanable performance upholstery, and ergonomic nursing station desks safeguarding the health of long-shift caretakers and medical executives.',
-    focusArea: 'Clinical Reception, Ward Offices & Care Stations'
+    focusArea: 'Clinical Reception, Ward Offices & Care Stations',
+    projectCategory: 'Reception Area'
   },
   {
     id: 'government',
@@ -48,12 +53,14 @@ const SPACES_DATA = [
     icon: <Landmark size={24} />,
     image: 'https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=1200&q=80',
     description: 'Durable, high-integrity conference tables, committee rooms setup, and institutional seating certified to meet the highest durability standards and official structural parameters.',
-    focusArea: 'State Departments, Council Chambers & Public Offices'
+    focusArea: 'State Departments, Council Chambers & Public Offices',
+    projectCategory: 'Conference & Meeting'
   }
 ];
 
-export default function SpacesPage({ setCurrentPage }) {
-  const handleViewProjects = () => {
+export default function SpacesPage({ setCurrentPage, setProjectCategory }) {
+  const handleViewProjects = (targetCategory) => {
+    if (setProjectCategory) setProjectCategory(targetCategory || 'All');
     setCurrentPage('projects');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -71,7 +78,7 @@ export default function SpacesPage({ setCurrentPage }) {
             Spaces We Transform
           </h1>
           <p className="editorial-subtitle" style={{ margin: '0 auto', maxWidth: '720px' }}>
-            ErgoSpace designs and delivers physical seating & furniture frameworks across diverse sectors, fostering productivity, spatial harmony, and structural integrity.
+            ErgoSpace designs and delivers physical seating & furniture frameworks across diverse sectors. Select a space type below to explore completed project installations.
           </p>
         </div>
 
@@ -95,16 +102,21 @@ export default function SpacesPage({ setCurrentPage }) {
                   paddingBottom: idx !== SPACES_DATA.length - 1 ? '6rem' : '0'
                 }}
               >
-                {/* Image Showcase (Alternates left/right on desktop) */}
-                <div style={{
-                  order: isEven ? 1 : 2,
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  boxShadow: 'var(--shadow-medium)',
-                  border: '1px solid var(--border-color)',
-                  height: 'clamp(300px, 40vw, 480px)',
-                  position: 'relative'
-                }} className="image-zoom-container">
+                {/* Image Showcase (Clickable to Projects) */}
+                <div 
+                  onClick={() => handleViewProjects(space.projectCategory)}
+                  style={{
+                    order: isEven ? 1 : 2,
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    boxShadow: 'var(--shadow-medium)',
+                    border: '1px solid var(--border-color)',
+                    height: 'clamp(300px, 40vw, 480px)',
+                    position: 'relative',
+                    cursor: 'pointer'
+                  }} 
+                  className="image-zoom-container"
+                >
                   <img 
                     src={space.image} 
                     alt={space.title} 
@@ -169,11 +181,11 @@ export default function SpacesPage({ setCurrentPage }) {
 
                   <div style={{ marginTop: '1.5rem' }}>
                     <button 
-                      onClick={handleViewProjects}
+                      onClick={() => handleViewProjects(space.projectCategory)}
                       className="btn-primary"
                       style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                     >
-                      <span>Explore Case Studies</span>
+                      <span>Explore {space.title} Projects</span>
                       <ArrowRight size={16} />
                     </button>
                   </div>

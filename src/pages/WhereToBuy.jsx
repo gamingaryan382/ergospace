@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShoppingBag, Building, Users } from 'lucide-react';
 
-export default function WhereToBuy({ setCurrentPage }) {
+export default function WhereToBuy({ setCurrentPage, setContactTab }) {
   const channels = [
     {
       icon: <ShoppingBag size={28} strokeWidth={1.5} style={{ color: 'var(--accent)', marginBottom: '1rem' }} />,
@@ -16,14 +16,22 @@ export default function WhereToBuy({ setCurrentPage }) {
       title: 'Business Accounts',
       description: 'Request bulk pricing, custom materials, and complimentary design consultation for corporate offices and commercial buildings.',
       cta: 'Contact Commercial Sales',
-      action: () => setCurrentPage('contact')
+      action: () => {
+        if (setContactTab) setContactTab('general');
+        setCurrentPage('contact');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     },
     {
       icon: <Users size={28} strokeWidth={1.5} style={{ color: 'var(--accent)', marginBottom: '1rem' }} />,
       title: 'Reseller & Dealer Network',
       description: 'Apply to become an authorized ErgoSpace distributor or retail partner and represent our furniture portfolio in your region.',
       cta: 'Partner With Us',
-      action: () => setCurrentPage('contact')
+      action: () => {
+        if (setContactTab) setContactTab('reseller');
+        setCurrentPage('contact');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
   ];
 

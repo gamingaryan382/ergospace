@@ -157,13 +157,14 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
 
   // B2B Partner client logos wall specifications
   const clientLogosList = [
-    { id: 'razorpay', name: 'Razorpay', src: '/logo_razorpay.png' },
+    { id: 'google', name: 'Google', src: '/logo_google.png' },
     { id: 'zomato', name: 'Zomato', src: '/logo_zomato.png' },
-    { id: 'groww', name: 'Groww', src: '/logo_groww.png' },
-    { id: 'cred', name: 'CRED', src: '/logo_cred.png' },
-    { id: 'swiggy', name: 'Swiggy', src: '/logo_swiggy.png' },
-    { id: 'paytm', name: 'Paytm', src: '/logo_paytm.png' },
-    { id: 'flipkart', name: 'Flipkart', src: '/logo_flipkart.png' }
+    { id: 'nestle', name: 'Nestlé', src: '/logo_nestle.png' },
+    { id: 'flipkart', name: 'Flipkart', src: '/logo_flipkart.png' },
+    { id: 'lg', name: 'LG', src: '/logo_lg.png' },
+    { id: 'jindal', name: 'Jindal Steel & Power', src: '/logo_jindal.png' },
+    { id: 'tesla', name: 'Tesla', src: '/logo_tesla.png' },
+    { id: 'lenskart', name: 'Lenskart', src: '/logo_lenskart.png' }
   ];
 
   // Infinite Scroll Hero Gallery Images
@@ -192,7 +193,7 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
       {/* SECTION 1 — PREMIUM SLIDESHOW HERO */}
       <section style={{
         width: '100%',
-        paddingTop: '122px',
+        paddingTop: '96px',
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#F5F3EE'
@@ -386,40 +387,29 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
                 <div
                   key={idx}
                   style={{
-                    background: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    padding: '1.5rem 4.5rem',
-                    borderRadius: '16px',
+                    background: 'transparent',
+                    border: 'none',
+                    padding: '0.5rem 1.5rem',
+                    borderRadius: '0',
                     cursor: 'default',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transform: 'skewX(-12deg)',
-                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-                    boxShadow: '0 4px 30px rgba(0,0,0,0.02)',
-                    minWidth: '270px'
+                    boxShadow: 'none',
+                    minWidth: '180px'
                   }}
-                  className="angled-logo-card"
                 >
                   <div style={{
-                    transform: 'skewX(12deg)',
                     display: 'flex',
                     alignItems: 'center',
                     width: '100%',
                     justifyContent: 'center'
                   }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      opacity: 0.95
-                    }}>
-                      <img 
-                        src={client.src} 
-                        alt={client.name} 
-                        style={{ maxHeight: '65px', maxWidth: '190px', objectFit: 'contain' }}
-                      />
-                    </div>
+                    <img 
+                      src={client.src} 
+                      alt={client.name} 
+                      style={{ maxHeight: '60px', maxWidth: '170px', objectFit: 'contain' }}
+                    />
                   </div>
                 </div>
               ))}

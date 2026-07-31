@@ -158,19 +158,19 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
           width: '100%',
           zIndex: 1000,
           transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-          transform: isScrolled ? 'translateY(-42px)' : 'translateY(0)',
+          transform: isScrolled ? 'translateY(-36px)' : 'translateY(0)',
           boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.04)' : 'none'
         }}
       >
         {/* LEVEL 1: TOP NAVIGATION */}
         <div 
           style={{
-            height: '42px',
+            height: '36px',
             backgroundColor: '#F7F4EC',
             borderBottom: '1px solid #E0DCD3',
             display: 'flex',
             alignItems: 'stretch',
-            fontSize: '0.70rem',
+            fontSize: '0.62rem',
             fontWeight: 600,
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
@@ -194,7 +194,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                   fontWeight: 700, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
-                  padding: '0 1.5rem',
+                  padding: '0 1.25rem',
                   height: '100%',
                   display: 'flex',
                   alignItems: 'center',
@@ -214,7 +214,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                   fontWeight: 600, 
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
-                  padding: '0 1.5rem',
+                  padding: '0 1.25rem',
                   height: '100%',
                   display: 'flex',
                   alignItems: 'center',
@@ -228,7 +228,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
             </div>
 
             {/* Right Side Links (CLEAN TEXT LINKS WITHOUT BOXES OR VERTICAL BORDERS) */}
-            <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center', flexWrap: 'nowrap', marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'nowrap', marginLeft: 'auto' }}>
               <button 
                 onClick={() => handleNavClick('wheretobuy')}
                 className="top-nav-link"
@@ -304,7 +304,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
         {/* LEVEL 2: MAIN NAVIGATION */}
         <div 
           style={{
-            height: isScrolled ? '64px' : '80px',
+            height: isScrolled ? '48px' : '60px',
             backgroundColor: '#FFFFFF',
             display: 'flex',
             alignItems: 'center',
@@ -315,7 +315,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-            {/* Logo (Increased by 20%, responsive shrink) */}
+            {/* Logo */}
             <div 
               onClick={() => handleNavClick('home')}
               style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
@@ -324,7 +324,7 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                 src="/logo.png" 
                 alt="ErgoSpace Logo" 
                 style={{ 
-                  height: isScrolled ? '40px' : '52px', 
+                  height: isScrolled ? '28px' : '38px', 
                   width: 'auto', 
                   objectFit: 'contain', 
                   mixBlendMode: 'multiply',
@@ -335,11 +335,11 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
 
             {/* Desktop Navigation */}
             <div style={{ display: 'none', marginLeft: 'auto', alignItems: 'center', flexWrap: 'nowrap' }} className="desktop-nav-styles">
-              {/* Products dropdown trigger (placed right next to the aligned links container) */}
+              {/* Products dropdown trigger */}
               <div 
                 onMouseEnter={() => setIsCollectionHovered(true)}
                 onMouseLeave={() => setIsCollectionHovered(false)}
-                style={{ display: 'flex', alignItems: 'center', height: isScrolled ? '64px' : '80px', marginRight: '2rem', flexShrink: 0 }}
+                style={{ display: 'flex', alignItems: 'center', height: isScrolled ? '48px' : '60px', marginRight: '2rem', flexShrink: 0 }}
               >
                 <button
                   onClick={() => handleNavClick('collection')}

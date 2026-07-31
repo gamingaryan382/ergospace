@@ -26,6 +26,8 @@ function AppContent() {
   const [selectedProductId, setSelectedProductId] = useState('astra-chair');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedSubcategory, setSelectedSubcategory] = useState('frost-and-slate');
+  const [contactTab, setContactTab] = useState('general');
+  const [projectCategory, setProjectCategory] = useState('All');
 
   // Scroll to top on page transition (micro-timer ensures reliability across layouts)
   React.useEffect(() => {
@@ -114,22 +116,22 @@ function AppContent() {
         );
       case 'builder':
       case 'spaces':
-        return <SpacesPage setCurrentPage={setCurrentPage} />;
+        return <SpacesPage setCurrentPage={setCurrentPage} setProjectCategory={setProjectCategory} />;
       case 'solutions':
       case 'experience':
         return <ExperienceCentrePage />;
 
       case 'wheretobuy':
-        return <WhereToBuy setCurrentPage={setCurrentPage} />;
+        return <WhereToBuy setCurrentPage={setCurrentPage} setContactTab={setContactTab} />;
 
       case 'about':
         return <AboutUs setCurrentPage={setCurrentPage} />;
       case 'projects':
-        return <ProjectsPage />;
+        return <ProjectsPage initialCategory={projectCategory} setProjectCategory={setProjectCategory} />;
       case 'latest':
         return <Latest setCurrentPage={setCurrentPage} />;
       case 'contact':
-        return <ContactUs />;
+        return <ContactUs contactTab={contactTab} setContactTab={setContactTab} />;
       case 'refund':
         return <RefundPolicy />;
       case 'shipping':

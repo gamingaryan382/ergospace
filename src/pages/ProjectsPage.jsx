@@ -2,11 +2,23 @@ import React, { useState, useMemo } from 'react';
 import { PORTFOLIO_PROJECTS } from '../data/products';
 import { Search, MapPin, Tag, ChevronRight, X, ArrowRight, Info } from 'lucide-react';
 
-export default function ProjectsPage() {
+export default function ProjectsPage({ initialCategory = 'All', setProjectCategory }) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'All');
   const [visibleCount, setVisibleCount] = useState(12);
   const [activeProject, setActiveProject] = useState(null);
+
+  // Sync with initialCategory when updated
+  React.useEffect(() => {
+    if (initialCategory) {
+      setSelectedCategory(initialCategory);
+    }
+  }, [initialCategory]);
+
+  const handleCategorySelect = (cat) => {
+    setSelectedCategory(cat);
+    if (setProjectCategory) setProjectCategory(cat);
+  };
 
   // Categories extraction
   const categories = useMemo(() => {
@@ -106,7 +118,7 @@ export default function ProjectsPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => handleCategorySelect(cat)}
                 style={{
                   padding: '0.6rem 1.25rem',
                   borderRadius: '4px',

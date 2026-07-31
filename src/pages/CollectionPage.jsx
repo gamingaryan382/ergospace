@@ -426,16 +426,16 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
                 <div 
                   className="concept-image-container"
                   style={{
-                    backgroundColor: '#F5F5F5',
-                    borderRadius: '6px',
-                    padding: '2rem 1.5rem',
+                    backgroundColor: 'transparent',
+                    borderRadius: '0px',
+                    padding: '1rem 0.5rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '280px',
                     overflow: 'hidden',
                     position: 'relative',
-                    transition: 'background-color 0.3s ease'
+                    transition: 'transform 0.3s ease'
                   }}
                 >
                   <img 
@@ -610,10 +610,10 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
               >
                 {/* Image Section */}
                 <div style={{
-                  backgroundColor: '#FCFCFA',
-                  borderRadius: '12px',
-                  border: '1px solid var(--border-color)',
-                  padding: '3rem 2rem',
+                  backgroundColor: 'transparent',
+                  borderRadius: '0px',
+                  border: 'none',
+                  padding: '1.5rem 0',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -801,10 +801,10 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
               >
                 {/* Image Section */}
                 <div style={{
-                  backgroundColor: '#FCFCFA',
-                  borderRadius: '12px',
-                  border: '1px solid var(--border-color)',
-                  padding: '3rem 2rem',
+                  backgroundColor: 'transparent',
+                  borderRadius: '0px',
+                  border: 'none',
+                  padding: '1.5rem 0',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -928,7 +928,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
                 }}
                 className="desk-showroom-card"
               >
-                <div style={{ height: '240px', backgroundColor: 'var(--bg-secondary)', borderRadius: '6px', marginBottom: '1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ height: '240px', backgroundColor: 'transparent', borderRadius: '0px', marginBottom: '1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img src={item.image} alt={item.name} style={{ maxHeight: '85%', maxWidth: '85%', objectFit: 'contain' }} />
                 </div>
 

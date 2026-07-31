@@ -203,8 +203,8 @@ export default function Footer({ setCurrentPage, setSelectedCategory }) {
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'start' }}>
                 <MapPin size={16} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: '2px' }} />
                 <div>
-                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Registered Office</span>
-                  <span>Plot No. 424, Sector 8, IMT Manesar, Gurugram, Haryana - 122050</span>
+                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Manufacturing & Operations Facility</span>
+                  <span>Plot No. 32, Street No. 04, Sector 7 A, Met Yakubpur Badli, Jhajjar, Haryana 124105</span>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'start' }}>
