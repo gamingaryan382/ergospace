@@ -72,80 +72,11 @@ export default function Footer({ setCurrentPage, setSelectedCategory }) {
     }}>
       <div className="container-premium">
         
-        {/* PREMIUM B2B CONTACT CTA - Sits as a clean, rounded card at the top of the footer */}
-        <div style={{
-          backgroundColor: '#FFFFFF',
-          border: '1px solid #E8E6E2',
-          borderRadius: '16px',
-          padding: '3rem',
-          boxShadow: '0 8px 30px rgba(29, 29, 29, 0.02)',
-          marginBottom: '5rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '2rem'
-        }}>
-          <div style={{ maxWidth: '520px' }}>
-            <h3 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1.75rem',
-              fontWeight: 600,
-              color: '#1D1D1D',
-              marginBottom: '0.5rem'
-            }}>
-              Ready To Transform Your Workspace?
-            </h3>
-            <p style={{
-              fontSize: '0.95rem',
-              color: '#5E5E5E',
-              lineHeight: 1.5,
-              fontWeight: 300
-            }}>
-              Talk to our workspace specialists and discover furniture solutions tailored to your business.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="btn-primary"
-              style={{
-                backgroundColor: 'var(--accent)',
-                color: 'white',
-                border: 'none',
-                padding: '1rem 2rem'
-              }}
-            >
-              Request Consultation
-            </button>
-            <button 
-              onClick={triggerCatalogueDownload}
-              className="btn-secondary"
-              style={{
-                borderColor: '#1D1D1D',
-                color: '#1D1D1D',
-                padding: '1rem 2rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}
-            >
-              <FileText size={16} />
-              <span>
-                {brochureStatus === 'loading' && 'Preparing...'}
-                {brochureStatus === 'downloaded' && '✓ Downloaded'}
-                {brochureStatus === '' && 'Download Catalogue'}
-              </span>
-            </button>
-          </div>
-        </div>
-
         {/* TWO-COLUMN CONTENT LAYOUT */}
         <div style={{
           display: 'grid',
           gap: '4rem',
-          marginBottom: '5rem',
+          marginBottom: '4rem',
           alignItems: 'start'
         }} className="footer-layout-grid">
           
@@ -159,6 +90,7 @@ export default function Footer({ setCurrentPage, setSelectedCategory }) {
                 cursor: 'pointer',
                 userSelect: 'none'
               }}
+              onClick={() => { setCurrentPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             >
               <img 
                 src="/logo.png" 
@@ -173,40 +105,65 @@ export default function Footer({ setCurrentPage, setSelectedCategory }) {
             </div>
 
             <p style={{
-              color: '#5E5E5E',
-              fontSize: '0.9rem',
-              fontWeight: 300,
-              lineHeight: 1.6,
-              maxWidth: '320px'
+              color: '#1D1D1D',
+              fontSize: '1.15rem',
+              fontWeight: 600,
+              fontFamily: 'var(--font-display)',
+              lineHeight: 1.4,
+              maxWidth: '360px',
+              letterSpacing: '0.01em'
             }}>
-              Designing the physical foundation for the future of professional work. Engineered for focus, comfort, and longevity.
+              Furniture for every workspace
             </p>
 
-            {/* Corporate Info details */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.85rem', color: '#5E5E5E' }}>
+            {/* Corporate Info details - ALL 4 ADDRESSES & HELPLINES */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', fontSize: '0.85rem', color: '#5E5E5E' }}>
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'start' }}>
                 <Phone size={16} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: '2px' }} />
                 <div>
-                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Helplines</span>
+                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Contact</span>
                   <span>+91 - 95990-84008</span>
                   <span style={{ display: 'block' }}>+91 - 95990-84016</span>
+                  <span style={{ display: 'block' }}>+91 - 8796742564</span>
                 </div>
               </div>
+
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'start' }}>
                 <Mail size={16} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: '2px' }} />
                 <div>
-                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Email Inquiries</span>
+                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Email</span>
                   <a href="mailto:contact@ergospace.in" style={{ display: 'block', color: 'inherit' }}>contact@ergospace.in (Assistance)</a>
                   <a href="mailto:response@ergospace.in" style={{ display: 'block', color: 'inherit' }}>response@ergospace.in (Bulk Sales)</a>
+                  <a href="mailto:Harshita@ergospace.in" style={{ display: 'block', color: 'inherit' }}>Harshita@ergospace.in (Reseller & Dealer Network)</a>
                 </div>
               </div>
+
+              {/* ALL 4 ADDRESSES */}
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'start' }}>
                 <MapPin size={16} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: '2px' }} />
-                <div>
-                  <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Manufacturing & Operations Facility</span>
-                  <span>Plot No. 32, Street No. 04, Sector 7 A, Met Yakubpur Badli, Jhajjar, Haryana 124105</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Corporate Office & Experience Centre</span>
+                    <span>Tower IS5, Ground & 1st Floor, Urbtech Trade Center, 35, adjacent DPS School, Block B, Sector 132, Noida, Uttar Pradesh 201304</span>
+                  </div>
+
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Manufacturing Unit 1</span>
+                    <span>Plot No. 163, Sector 6, IMT Manesar, Gurugram, Haryana 122051</span>
+                  </div>
+
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Manufacturing Unit 2</span>
+                    <span>Plot No. 144, Sector 3, IMT Manesar, Gurugram, Haryana 122051</span>
+                  </div>
+
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block', color: '#1D1D1D' }}>Manufacturing Unit 3</span>
+                    <span>Plot No. 32, Street No. 04, Sector 7 A, Met Yakubpur Badli, Jhajjar, Haryana 124105</span>
+                  </div>
                 </div>
               </div>
+
               <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'start' }}>
                 <Clock size={16} style={{ color: '#8A8A8A', flexShrink: 0, marginTop: '2px' }} />
                 <div>

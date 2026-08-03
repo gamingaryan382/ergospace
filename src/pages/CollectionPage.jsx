@@ -326,7 +326,7 @@ export default function CollectionPage({ setCurrentPage, setSelectedProductId, s
     const SERIES_PRODUCTS = {
       'frost-and-slate': [
         { id: 'amaze-chair', name: 'Amaze', series: 'Seating', image: '/amaze_1.jpg' },
-        { id: 'beta-chair', name: 'BETA', series: 'Seating', image: '/beta_2.png' },
+        { id: 'beta-chair', name: 'BETA', series: 'Seating', image: '/beta_poster.jpg' },
         { id: 'flare-chair', name: 'FLARE', series: 'Seating', image: '/flare_2.jpg' },
         { id: 'ergo-human-chair', name: 'Ergo Human', series: 'Seating', image: '/ergo_human_front.png' },
         { id: 'enova-chair', name: 'Enova', series: 'Seating', image: '/enova_front.png' },

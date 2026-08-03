@@ -118,8 +118,8 @@ export default function ProductPage({ productId, setCurrentPage }) {
           {product.name}
         </h1>
         
-        {/* Large group banner */}
-        <div className="container-premium" style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-subtle)' }}>
+        {/* Large group banner - Clean borderless image */}
+        <div className="container-premium" style={{ borderRadius: '0px', overflow: 'hidden', border: 'none', boxShadow: 'none' }}>
           <img 
             src={product.bannerImg} 
             alt={`${product.name} Banner`} 

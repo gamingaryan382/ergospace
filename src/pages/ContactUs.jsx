@@ -60,15 +60,15 @@ export default function ContactUs({ contactTab = 'general', setContactTab }) {
     <div style={{ paddingTop: '1.5rem', minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
       <div className="container-premium" style={{ paddingBottom: '6rem' }}>
         
-        {/* TOP HERO BANNER */}
+        {/* TOP HERO BANNER - Clean Borderless */}
         <div style={{
           width: '100%',
           marginBottom: '3rem',
-          borderRadius: '12px',
+          borderRadius: '0px',
           overflow: 'hidden',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
-          border: '1px solid var(--border-color)',
-          backgroundColor: '#FFFFFF'
+          boxShadow: 'none',
+          border: 'none',
+          backgroundColor: 'transparent'
         }}>
           <img 
             src="/contact_banner.jpg" 

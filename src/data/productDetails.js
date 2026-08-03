@@ -108,6 +108,7 @@ export const PRODUCT_DETAILS = {
     tagline: 'Modern executive mesh task chair with fixed armrests and center tilt locking mechanism.',
     bannerImg: '/beta_poster.jpg',
     images: [
+      '/beta_poster.jpg',
       '/beta_1.png',
       '/beta_2.png',
       '/beta_3.png',

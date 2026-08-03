@@ -361,40 +361,193 @@ export default function Navbar({ currentPage, setCurrentPage, setSelectedCategor
                 </button>
               </div>
 
-              {/* Desktop Navigation Links Container (aligned with top-right container) */}
-              <nav style={{ width: '600px', flexShrink: 0 }}> 
-                <ul style={{ display: 'flex', listStyle: 'none', gap: '2rem', alignItems: 'center', margin: 0, padding: 0, width: '100%', justifyContent: 'flex-start', flexWrap: 'nowrap' }}>
-                  {/* Other Main Links */}
-                  {[
-                    { label: 'Spaces & solutions', page: 'spaces' },
-                    { label: 'Projects', page: 'projects' },
-                    { label: 'About us', page: 'about' },
-                    { label: 'Updates', page: 'latest' },
-                    { label: 'Contact us', page: 'contact' }
-                  ].map((item) => (
-                    <li key={item.page}>
-                      <button
-                        onClick={() => handleNavClick(item.page)}
-                        className={`main-nav-link ${currentPage === item.page ? 'active' : ''}`}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          cursor: 'pointer',
-                          fontSize: '0.84rem', // Matching reference image
-                          fontWeight: 600,
-                          letterSpacing: '0.02em',
-                          color: currentPage === item.page ? 'var(--accent)' : 'var(--text-primary)',
-                          padding: '0.5rem 0',
-                          whiteSpace: 'nowrap',
-                          transition: 'color 0.25s ease'
-                        }}
-                      >
-                        {item.label}
-                      </button>
-                    </li>
-                  ))}
+              {/* Desktop Navigation Links Container */}
+              <nav style={{ width: 'auto', flexShrink: 0 }}> 
+                <ul style={{ display: 'flex', listStyle: 'none', gap: '1.75rem', alignItems: 'center', margin: 0, padding: 0, width: '100%', justifyContent: 'flex-start', flexWrap: 'nowrap' }}>
+                  <li>
+                    <button
+                      onClick={() => handleNavClick('spaces')}
+                      className={`main-nav-link ${currentPage === 'spaces' ? 'active' : ''}`}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.02em',
+                        color: currentPage === 'spaces' ? 'var(--accent)' : 'var(--text-primary)',
+                        padding: '0.5rem 0',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.25s ease'
+                      }}
+                    >
+                      Spaces & solutions
+                    </button>
+                  </li>
 
+                  <li>
+                    <button
+                      onClick={() => handleNavClick('projects')}
+                      className={`main-nav-link ${currentPage === 'projects' ? 'active' : ''}`}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.02em',
+                        color: currentPage === 'projects' ? 'var(--accent)' : 'var(--text-primary)',
+                        padding: '0.5rem 0',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.25s ease'
+                      }}
+                    >
+                      Projects
+                    </button>
+                  </li>
 
+                  <li>
+                    <button
+                      onClick={() => handleNavClick('about')}
+                      className={`main-nav-link ${currentPage === 'about' ? 'active' : ''}`}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.02em',
+                        color: currentPage === 'about' ? 'var(--accent)' : 'var(--text-primary)',
+                        padding: '0.5rem 0',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.25s ease'
+                      }}
+                    >
+                      About us
+                    </button>
+                  </li>
+
+                  <li>
+                    <button
+                      onClick={() => handleNavClick('latest')}
+                      className={`main-nav-link ${currentPage === 'latest' ? 'active' : ''}`}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.02em',
+                        color: currentPage === 'latest' ? 'var(--accent)' : 'var(--text-primary)',
+                        padding: '0.5rem 0',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.25s ease'
+                      }}
+                    >
+                      Updates
+                    </button>
+                  </li>
+
+                  {/* CATALOGUES DROPDOWN MENU */}
+                  <li 
+                    style={{ position: 'relative' }}
+                    onMouseEnter={() => setIsWhereToBuyHovered(true)}
+                    onMouseLeave={() => setIsWhereToBuyHovered(false)}
+                  >
+                    <button
+                      onClick={() => handleNavClick('collection')}
+                      className={`main-nav-link ${currentPage === 'collection' ? 'active' : ''}`}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.02em',
+                        color: currentPage === 'collection' ? 'var(--accent)' : 'var(--text-primary)',
+                        padding: '0.5rem 0',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.25s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.25rem'
+                      }}
+                    >
+                      <span>Catalogues</span>
+                      <ChevronDown size={14} />
+                    </button>
+
+                    {isWhereToBuyHovered && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        backgroundColor: '#FFFFFF',
+                        borderRadius: '12px',
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
+                        border: '1px solid #E8E6E2',
+                        padding: '0.75rem 0',
+                        minWidth: '180px',
+                        zIndex: 1000,
+                        animation: 'megaSlideDown 0.2s ease'
+                      }}>
+                        {[
+                          { label: 'Sittings', category: 'Ergonomic Chairs' },
+                          { label: 'Workstations', category: 'Workstations' },
+                          { label: 'Metal storages', category: 'Storage & Accessories' }
+                        ].map((cat) => (
+                          <button
+                            key={cat.label}
+                            onClick={() => {
+                              if (setSelectedCategory) setSelectedCategory(cat.category);
+                              setCurrentPage('collection');
+                              setIsWhereToBuyHovered(false);
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
+                            style={{
+                              width: '100%',
+                              textAlign: 'left',
+                              padding: '0.65rem 1.25rem',
+                              fontSize: '0.85rem',
+                              fontWeight: 500,
+                              color: '#1D1D1D',
+                              background: 'none',
+                              border: 'none',
+                              cursor: 'pointer',
+                              transition: 'background-color 0.2s ease, color 0.2s ease'
+                            }}
+                            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F5F3EE'; e.currentTarget.style.color = 'var(--accent)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#1D1D1D'; }}
+                          >
+                            {cat.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+
+                  {/* SHIFTED CONTACT US TO THE FAR RIGHT */}
+                  <li>
+                    <button
+                      onClick={() => handleNavClick('contact')}
+                      className={`main-nav-link ${currentPage === 'contact' ? 'active' : ''}`}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '0.84rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.02em',
+                        color: currentPage === 'contact' ? 'var(--accent)' : 'var(--text-primary)',
+                        padding: '0.5rem 0',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.25s ease'
+                      }}
+                    >
+                      Contact us
+                    </button>
+                  </li>
                 </ul>
               </nav>
             </div>

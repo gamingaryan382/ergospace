@@ -3,7 +3,8 @@ import { PRODUCTS, WORKSPACE_SETUPS, B2B_CLIENTS, VISUAL_REVIEWS, PORTFOLIO_PROJ
 
 import { 
   ArrowRight, Play, Eye, ArrowLeft, Heart, Check, HelpCircle, 
-  MapPin, ShieldCheck, Award, MessageSquareCode, Calendar, Clock, Sparkles, Star
+  MapPin, ShieldCheck, Award, MessageSquareCode, Calendar, Clock, Sparkles, Star,
+  Factory, Sliders, CheckCircle, Flag
 } from 'lucide-react';
 
 const LATEST_ARTICLES = [
@@ -50,7 +51,7 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
   const slides = [
     {
       id: 'banner1',
-      name: 'Elevate Every Workday with Ergonomic Seating',
+      name: 'Your Private Office',
       image: '/hero_banner_1.jpg',
       categoryKey: 'Ergonomic Chairs'
     },
@@ -62,21 +63,21 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
     },
     {
       id: 'banner3',
-      name: 'Comfort That Complements Every Workspace',
+      name: 'Create Better Workdays with Smarter Workstations',
       image: '/hero_banner_3.jpg',
-      categoryKey: 'Lounge Seating'
+      categoryKey: 'Workstations'
     },
     {
       id: 'banner4',
-      name: 'Create Spaces People Love to Gather',
+      name: 'Comfort That Complements Every Workspace',
       image: '/hero_banner_4.jpg',
-      categoryKey: 'Cafeteria & Collaborative'
+      categoryKey: 'Lounge Seating'
     },
     {
       id: 'banner5',
-      name: 'Workstations Designed for the Way You Work',
+      name: 'Create Spaces People Love to Gather',
       image: '/hero_banner_5.jpg',
-      categoryKey: 'Workstations'
+      categoryKey: 'Cafeteria & Collaborative'
     }
   ];
 
@@ -108,31 +109,31 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
   useEffect(() => {
     const handleMove = (e) => {
       if (!isDraggingSlider || !sliderRef.current) return;
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const rect = sliderRef.current.getBoundingClientRect();
-      const x = clientX - rect.left;
+      const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
       const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
       setSliderPosition(percentage);
     };
 
-    const handleEnd = () => {
-      setIsDraggingSlider(false);
-    };
+    const handleUp = () => setIsDraggingSlider(false);
 
     if (isDraggingSlider) {
       window.addEventListener('mousemove', handleMove);
+      window.addEventListener('mouseup', handleUp);
       window.addEventListener('touchmove', handleMove);
-      window.addEventListener('mouseup', handleEnd);
-      window.addEventListener('touchend', handleEnd);
+      window.addEventListener('touchend', handleUp);
     }
-
     return () => {
       window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('mouseup', handleUp);
       window.removeEventListener('touchmove', handleMove);
-      window.removeEventListener('mouseup', handleEnd);
-      window.removeEventListener('touchend', handleEnd);
+      window.removeEventListener('touchend', handleUp);
     };
   }, [isDraggingSlider]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Section 9 B2B Consultation Modal
   const [isB2BModalOpen, setIsB2BModalOpen] = useState(false);
@@ -155,21 +156,28 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // B2B Partner client logos wall specifications
-  const clientLogosList = [
-    { id: 'google', name: 'Google', src: '/logo_google.png' },
-    { id: 'zomato', name: 'Zomato', src: '/logo_zomato.png' },
-    { id: 'nestle', name: 'Nestlé', src: '/logo_nestle.png' },
-    { id: 'flipkart', name: 'Flipkart', src: '/logo_flipkart.png' },
+  // B2B Partner client logos wall specifications - ROW 1 & ROW 2
+  const clientLogosRow1 = [
+    { id: 'dell', name: 'Dell Technologies', src: '/logo_dell.png' },
+    { id: 'aihp', name: 'AIHP', src: '/logo_aihp.png' },
+    { id: 'daikin', name: 'Daikin', src: '/logo_daikin.png' },
+    { id: 'apollo', name: 'Apollo Hospitals', src: '/logo_apollo.png' },
+    { id: 'livspace', name: 'Livspace', src: '/logo_livspace.png' },
+    { id: 'tesla', name: 'Tesla', src: '/logo_tesla.png' }
+  ];
+
+  const clientLogosRow2 = [
+    { id: 'bhel', name: 'BHEL', src: '/logo_bhel.png' },
+    { id: 'oyo', name: 'OYO', src: '/logo_oyo.png' },
+    { id: 'lenskart', name: 'Lenskart', src: '/logo_lenskart.png' },
     { id: 'lg', name: 'LG', src: '/logo_lg.png' },
-    { id: 'jindal', name: 'Jindal Steel & Power', src: '/logo_jindal.png' },
-    { id: 'tesla', name: 'Tesla', src: '/logo_tesla.png' },
-    { id: 'lenskart', name: 'Lenskart', src: '/logo_lenskart.png' }
+    { id: 'nestle', name: 'Nestlé', src: '/logo_nestle.png' },
+    { id: 'google', name: 'Google', src: '/logo_google.png' }
   ];
 
   // Infinite Scroll Hero Gallery Images
   const heroImages = [
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80', // Executive Office
+    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80', // Executive Office
     'https://images.unsplash.com/photo-1612372606404-0ab33e7187ee?auto=format&fit=crop&w=600&q=80', // Ergonomic Chair
     'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=600&q=80', // Sit-stand Desk
     'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80', // Conference Room
@@ -190,16 +198,17 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
   return (
     <div style={{ position: 'relative' }}>
       
-      {/* SECTION 1 — PREMIUM SLIDESHOW HERO */}
+      {/* SECTION 1 — HERO SLIDESHOW - Exact Image Dimensions with Zero Background Box */}
       <section style={{
         width: '100%',
         paddingTop: '96px',
+        paddingBottom: 0,
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#F5F3EE'
+        backgroundColor: 'transparent'
       }}>
-        {/* Slides Container with exact 1000/460 aspect ratio so image is 100% visible with zero cropping */}
-        <div style={{ position: 'relative', width: '100%', aspectRatio: '1000 / 460' }}>
+        {/* Slides Container - Exact native image aspect ratio, flush edge-to-edge */}
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 9' }}>
           {slides.map((slide, idx) => {
             const isActive = idx === currentSlide;
             return (
@@ -226,7 +235,7 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
                   cursor: 'pointer'
                 }}
               >
-                {/* Full HD Banner Image - No cropping, no quality loss */}
+                {/* Full HD Banner Image - 100% visible, zero cropping, zero text cut off */}
                 <img
                   src={slide.image}
                   alt={slide.name}
@@ -234,7 +243,11 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
                     width: '100%',
                     height: '100%',
                     objectFit: 'contain',
-                    display: 'block'
+                    objectPosition: 'center center',
+                    display: 'block',
+                    imageRendering: '-webkit-optimize-contrast',
+                    WebkitBackfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)'
                   }}
                 />
               </div>
@@ -367,50 +380,85 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
             Trusted By Industry Leaders
           </h4>
 
-          {/* Marquee scrolling ticker with Angled Glass Cards */}
+          {/* 2-ROW MARQUEE TICKER */}
+          {/* 2-ROW MARQUEE TICKER (SEAMLESS INFINITE LOOP) */}
+          {/* CLIENT LOGOS TICKER — GRAPHICS ONLY */}
+          {/* CLIENT LOGOS TICKER — 2 ROWS OF PURE GRAPHICS */}
           <div style={{
             width: '100%',
             overflow: 'hidden',
             position: 'relative',
-            padding: '0.5rem 0'
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '2rem',
+            padding: '1rem 0'
           }} className="logo-marquee-container">
+            {/* ROW 1: Dell Technologies, AIHP, Daikin, Apollo Hospitals, Livspace, Tesla */}
             <div style={{
               display: 'flex',
-              gap: '2.5rem',
+              gap: '4.5rem',
               width: 'max-content',
-              animation: 'marqueeLogo 20s linear infinite',
+              animation: 'marqueeLogo 22s linear infinite',
               transform: 'translate3d(0, 0, 0)',
-              willChange: 'transform',
-              backfaceVisibility: 'hidden'
+              willChange: 'transform'
             }} className="logo-ticker-row">
-              {[...clientLogosList, ...clientLogosList, ...clientLogosList, ...clientLogosList].map((client, idx) => (
+              {Array(10).fill(clientLogosRow1).flat().map((client, idx) => (
                 <div
-                  key={idx}
+                  key={'r1-' + idx}
                   style={{
-                    background: 'transparent',
-                    border: 'none',
-                    padding: '0.5rem 1.5rem',
-                    borderRadius: '0',
-                    cursor: 'default',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: 'none',
-                    minWidth: '180px'
+                    minWidth: '160px',
+                    height: '65px'
                   }}
                 >
-                  <div style={{
+                  <img 
+                    src={client.src} 
+                    alt={client.name} 
+                    style={{
+                      height: '55px',
+                      maxWidth: '200px',
+                      width: 'auto',
+                      objectFit: 'contain',
+                      display: 'block'
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* ROW 2: BHEL, OYO, Lenskart, LG, Nestle */}
+            <div style={{
+              display: 'flex',
+              gap: '4.5rem',
+              width: 'max-content',
+              animation: 'marqueeLogoReverse 22s linear infinite',
+              transform: 'translate3d(0, 0, 0)',
+              willChange: 'transform'
+            }} className="logo-ticker-row">
+              {Array(10).fill(clientLogosRow2).flat().map((client, idx) => (
+                <div
+                  key={'r2-' + idx}
+                  style={{
                     display: 'flex',
                     alignItems: 'center',
-                    width: '100%',
-                    justifyContent: 'center'
-                  }}>
-                    <img 
-                      src={client.src} 
-                      alt={client.name} 
-                      style={{ maxHeight: '60px', maxWidth: '170px', objectFit: 'contain' }}
-                    />
-                  </div>
+                    justifyContent: 'center',
+                    minWidth: '160px',
+                    height: '65px'
+                  }}
+                >
+                  <img 
+                    src={client.src} 
+                    alt={client.name} 
+                    style={{
+                      height: '55px',
+                      maxWidth: '200px',
+                      width: 'auto',
+                      objectFit: 'contain',
+                      display: 'block'
+                    }}
+                  />
                 </div>
               ))}
             </div>
@@ -420,6 +468,14 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
         <style>{`
           .logo-marquee-container:hover .logo-ticker-row {
             animation-play-state: paused;
+          }
+          @keyframes marqueeLogo {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+          }
+          @keyframes marqueeLogoReverse {
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
           }
         `}</style>
       </section>
@@ -475,11 +531,141 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
         </div>
       </section>
 
+      {/* WHY ERGOSPACE - FEATURE CARDS GRID (MATCHING USER IMAGE DESIGN EXACTLY) */}
+      <section style={{ backgroundColor: 'var(--bg-primary)', paddingTop: '2rem', paddingBottom: '6rem' }}>
+        <div className="container-premium">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
+              OUR ADVANTAGE
+            </span>
+            <h2 className="editorial-title" style={{ marginTop: '0.5rem', marginBottom: 0, fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
+              Why ErgoSpace
+            </h2>
+          </div>
 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '1.75rem'
+          }}>
+            {[
+              {
+                icon: Factory,
+                title: 'In-house manufacturing',
+                description: '1.5 lakh sq ft facility in Greater Noida & Manesar – volume, speed, and flexibility under one roof.'
+              },
+              {
+                icon: Clock,
+                title: 'Fastest lead time in India',
+                description: '10,000 workstations and chairs per month – we scale to your timeline.'
+              },
+              {
+                icon: Sliders,
+                title: 'Customisation at scale',
+                description: 'Every product configurable to your spec – without compromising on delivery.'
+              },
+              {
+                icon: CheckCircle,
+                title: 'Certified Quality',
+                description: 'High-quality products that are BIFMA Level certified and rigorously lab tested.'
+              },
+              {
+                icon: MapPin,
+                title: 'Pan-India presence',
+                description: '4 experience centres across Noida, Gurugram, Jhajjar, and Delhi NCR.'
+              },
+              {
+                icon: Flag,
+                title: 'Make in India',
+                description: 'Vertically integrated – designed, manufactured and installed by ErgoSpace teams.'
+              }
+            ].map((card, idx) => {
+              const IconComp = card.icon;
+              return (
+                <div 
+                  key={idx}
+                  style={{
+                    backgroundColor: '#F8F8F8',
+                    borderRadius: '16px',
+                    padding: '2.5rem 2rem',
+                    border: '1px solid #EAEAEA',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    gap: '1rem',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                  }}
+                >
+                  <div style={{
+                    color: 'var(--accent)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '0.25rem'
+                  }}>
+                    <IconComp size={32} strokeWidth={1.5} />
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.15rem',
+                    fontWeight: 700,
+                    fontFamily: 'var(--font-sans)',
+                    color: '#1D1D1D',
+                    margin: 0
+                  }}>
+                    {card.title}
+                  </h3>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    color: '#5E5E5E',
+                    fontWeight: 400,
+                    lineHeight: 1.6,
+                    margin: 0
+                  }}>
+                    {card.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
 
-      {/* Posture lab section completely removed */}
+          {/* STATS COUNTER ROW DIRECTLY UNDER THE 6 BOXES */}
+          <div style={{
+            marginTop: '4rem',
+            backgroundColor: '#F8F8F8',
+            borderRadius: '16px',
+            border: '1px solid #EAEAEA',
+            padding: '3rem 2rem',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '2.5rem',
+            textAlign: 'center'
+          }}>
+            <div>
+              <div style={{ fontSize: '2.75rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-display)', marginBottom: '0.35rem' }}>20+</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1D1D1D', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Years Experience</div>
+              <div style={{ fontSize: '0.825rem', color: '#5E5E5E', fontWeight: 400 }}>At your service</div>
+            </div>
 
-      {/* Posture lab section completely removed */}
+            <div>
+              <div style={{ fontSize: '2.75rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-display)', marginBottom: '0.35rem' }}>1.5 Lakh</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1D1D1D', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sq. Ft. Factory Size</div>
+              <div style={{ fontSize: '0.825rem', color: '#5E5E5E', fontWeight: 400 }}>In-house manufacturing facility</div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: '2.75rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-display)', marginBottom: '0.35rem' }}>10,000</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1D1D1D', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Workstations & Chairs / Month</div>
+              <div style={{ fontSize: '0.825rem', color: '#5E5E5E', fontWeight: 400 }}>Monthly production capacity</div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: '2.75rem', fontWeight: 700, color: 'var(--accent)', fontFamily: 'var(--font-display)', marginBottom: '0.35rem' }}>5000+</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1D1D1D', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Projects Done</div>
+              <div style={{ fontSize: '0.825rem', color: '#5E5E5E', fontWeight: 400 }}>Pan India support</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 4 — SPACES WE SERVE */}
       <section className="section-padding" style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-color)' }}>
@@ -1070,84 +1256,7 @@ export default function Homepage({ setCurrentPage, setSelectedProductId, setActi
             </div>
           </div>
         </div>
-        {/* SECTION 9 — BRAND EXPERIENCE & MANUFACTURING SHOWCASES */}
-      <section className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)' }}>
-        <div className="container-premium">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '4rem'
-          }} className="projects-premium-grid">
-            {/* Showroom Showcase Card */}
-            <div style={{
-              backgroundColor: 'var(--bg-tertiary)',
-              borderRadius: '16px',
-              border: '1px solid var(--border-color)',
-              padding: 'clamp(2rem, 4vw, 3rem)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: 'var(--shadow-subtle)'
-            }}>
-              <div>
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-                  Brand Experience
-                </span>
-                <h2 className="editorial-title" style={{ marginTop: '0.5rem', marginBottom: '1.25rem', fontSize: '1.85rem' }}>
-                  Visit Our Experience Centre
-                </h2>
-                <div style={{ height: '200px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                  <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80" alt="Showroom" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontWeight: 300, lineHeight: '1.6', marginBottom: '2rem' }}>
-                  Explore calibrated chairs and custom desk configurations physically. Book a visit to our 9,000 sq. ft. Noida Trade Centre showroom.
-                </p>
-              </div>
-              <button 
-                onClick={() => { setCurrentPage('experience'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="btn-primary"
-                style={{ width: '100%', boxSizing: 'border-box' }}
-              >
-                <span>Book Showroom Visit</span>
-              </button>
-            </div>
 
-            {/* Factory Showcase Card */}
-            <div style={{
-              backgroundColor: 'var(--bg-tertiary)',
-              borderRadius: '16px',
-              border: '1px solid var(--border-color)',
-              padding: 'clamp(2rem, 4vw, 3rem)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: 'var(--shadow-subtle)'
-            }}>
-              <div>
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-                  State-of-the-Art Hub
-                </span>
-                <h2 className="editorial-title" style={{ marginTop: '0.5rem', marginBottom: '1.25rem', fontSize: '1.85rem' }}>
-                  Manufacturing Hub
-                </h2>
-                <div style={{ height: '200px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Factory CNC" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontWeight: 300, lineHeight: '1.6', marginBottom: '2rem' }}>
-                  Learn about our 1,00,000 sq. ft. Gurugram factory where modern robotics, automated woodwork, and BIFMA Level 3 quality control take place.
-                </p>
-              </div>
-              <button 
-                onClick={() => { setCurrentPage('experience'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="btn-secondary"
-                style={{ width: '100%', boxSizing: 'border-box' }}
-              >
-                <span>Explore Manufacturing</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
         {/* Corporate Modal */}
         {isB2BModalOpen && (

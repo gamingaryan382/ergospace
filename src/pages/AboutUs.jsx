@@ -192,14 +192,14 @@ export default function AboutUs({ setCurrentPage }) {
               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 300 }}>At your service</div>
             </div>
             <div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.5rem' }}>1,00,000</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem', textTransform: 'uppercase' }}>Sq. Ft. Factory</div>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 300 }}>Gurugram In-house manufacturing</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.5rem' }}>1.5 Lakh</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem', textTransform: 'uppercase' }}>Sq. Ft. Factory Size</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 300 }}>In-house manufacturing facility</div>
             </div>
             <div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.5rem' }}>9,000</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem', textTransform: 'uppercase' }}>Sq. Ft. Showroom</div>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 300 }}>Noida sector 132 site</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.5rem' }}>10,000</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem', textTransform: 'uppercase' }}>Workstations & Chairs / Month</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 300 }}>Monthly production capacity</div>
             </div>
             <div>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.5rem' }}>5000+</div>
